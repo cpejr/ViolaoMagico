@@ -28,7 +28,7 @@ SDCard::SDCard()
 
 vector<string> SDCard::getList()
 {
-    return filesNames;
+    return this->mFilesNames;
 }
 
 void SDCard::Makelist()
@@ -39,16 +39,15 @@ void SDCard::Makelist()
         File entry = root.openNextFile();
         if (!entry)
         {
-            // no more files
             break;
         }
-        filesNames.push_back(entry.name());
+        this->mFilesNames.push_back(entry.name());
     }
 }
 
-void SDCard::printPosition(std::string fileName)
+void SDCard::printPosition(std::string pFileName)
 {
-    const char *c = fileName.c_str();
+    const char *c = pFileName.c_str();
     File textFile = SD.open(c);
     if (textFile)
     {
@@ -65,37 +64,37 @@ void SDCard::printPosition(std::string fileName)
     }
 }
 
-string SDCard::readFile(int numFile, char numBatida)
+string SDCard::readFile(int pNumFile, char pNumStroke)
 {
     File text = SD.open("/musicas");
-    string verifica = "";
-    string arquivo = "";
-    int retorno = 0;
-    for (int i = 0; i < numFile; i++)
+    string verify = "";
+    string file = "";
+    int goBack = 0;
+    for (int i = 0; i < pNumFile; i++)
     {
         File textFile = text.openNextFile();
-        if (i == numFile - 1)
+        if (i == pNumFile - 1)
         {
             if (textFile)
             {
                 while (textFile.available())
                 {
                     char ch = textFile.read();
-                    if (ch == numBatida)
+                    if (ch == pNumStroke)
                     {
                         ch = textFile.read();
                         if (ch == '<')
                         {
-                            while (retorno != 1)
+                            while (goBack != 1)
                             {
                                 ch = textFile.read();
                                 if (ch == '>')
                                 {
-                                    retorno = 1;
+                                    goBack = 1;
                                 }
                                 else
                                 {
-                                    arquivo += ch;
+                                    file += ch;
                                 }
                             }
                         }
@@ -114,17 +113,17 @@ string SDCard::readFile(int numFile, char numBatida)
                     }
                     else
                     {
-                        verifica = "";
+                        verify = "";
                     }
                 }
-                return arquivo;
+                return file;
                 textFile.close();
             }
         }
     }
 }
 
-void SDCard::writeInFile(vector<int> enginePos)
+void SDCard::writeInFile(vector<int> pEnginePos)
 {
 
     // const char * fileNamePtr = fileName.c_str();
@@ -134,7 +133,7 @@ void SDCard::writeInFile(vector<int> enginePos)
     if (textFile)
     {
         Serial.print("\n Gravando a posição dos motores... \n");
-        for (auto &i : enginePos)
+        for (auto &i : pEnginePos)
         {
             textFile.println(i);
         }

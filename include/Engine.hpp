@@ -9,9 +9,9 @@ public:
     MyStepper *stepperConstructor;
 
     // construtor do motor
-    Engine(char pCord, int pStep, int pDir);
+    Engine(char pGuitarString, int pStep, int pDir);
 
-    char getCord();
+    char getGuitarString();
 
     int getTarget();
 
@@ -28,10 +28,10 @@ public:
     void oneStep(int signal_);
 
 private:
-    char mCord;    // corda
-    int mTarget;   // posição final
-    int mPosition; // posição atual
-    int *mPosPtr;  // ponteiro para gravar a posição
+    char mGuitarString; // corda
+    int mTarget;        // posição final
+    int mPosition;      // posição atual
+    int *mPosPtr;       // ponteiro para gravar a posição
     int GLOBAL_SPEED;
     int GLOBAL_STEPS;
     int GLOBAL_TARGET;

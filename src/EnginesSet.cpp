@@ -8,22 +8,22 @@ EnginesSet::EnginesSet()
     mButtonDownState = digitalRead(buttonDown);
 }
 
-void EnginesSet::insertMotor(char pCord, int pStep, int pDir)
+void EnginesSet::insertMotor(char pGuitarString, int pStep, int pDir)
 {
-    Engine *engineConstrutor = new Engine(pCord, pStep, pDir);
+    Engine *engineConstrutor = new Engine(pGuitarString, pStep, pDir);
 
     this->mEngines.push_back(engineConstrutor);
 }
 
 // void EnginesSet::boot(); // Lógica de fim de curso
 
-void EnginesSet::addToenginesToPlay(std::string pCords)
+void EnginesSet::addToenginesToPlay(std::string pGuitarStrings)
 {
-    for (auto &cord : pCords)
+    for (auto &guitarString : pGuitarStrings)
     {
         for (auto engine : this->mEngines)
         {
-            if (engine->getCord() == cord)
+            if (engine->getGuitarString() == guitarString)
             {
                 if (mButtonUpState == 0 || mButtonSelectState == 0 || mButtonDownState == 0)
                 {
@@ -83,14 +83,14 @@ void EnginesSet::playMany(int pTimes = 1)
 
 void EnginesSet::parseFile(std::string pStream)
 {
-    char cord;
+    char guitarString;
     std::string subStream = "";
     int forControl = 0;
     int strControl = 0;
     for (forControl; forControl < pStream.size(); forControl++)
     {
-        cord = pStream[forControl];
-        if (cord == ' ')
+        guitarString = pStream[forControl];
+        if (guitarString == ' ')
         {
             if (pStream[forControl - 1] == 'd')
             {
@@ -177,19 +177,19 @@ void EnginesSet::tune(int pTunePosition)
     }
 }
 
-void EnginesSet::playOneStep(int pCordReset, int pSignal)
+void EnginesSet::playOneStep(int pGuitarStringReset, int pSignal)
 {
-    this->mEngines[pCordReset]->oneStep(pSignal);
+    this->mEngines[pGuitarStringReset]->oneStep(pSignal);
 }
 
 void EnginesSet::getEnginePos(SDCard pSd)
 {
     int *pos;
-    char cord;
+    char guitarString;
     std::vector<int> enginePos;
     for (int i = 0; i < mEngines.size(); i++)
     {
-        cord = mEngines[i]->getCord();
+        guitarString = mEngines[i]->getGuitarString();
         pos = mEngines[i]->getPosPtr();
         enginePos.push_back(*pos);
     }

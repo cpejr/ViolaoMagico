@@ -22,12 +22,12 @@ public:
 
     EnginesSet();
 
-    void insertMotor(char pCord, int pStep, int pDir);
+    void insertMotor(char pGuitarString, int pStep, int pDir);
 
     // void boot(); // Lógica de fim de curso
 
     // adiciona os motores que irão girar de acordo com a corda presente na música
-    void addToenginesToPlay(std::string pCords);
+    void addToenginesToPlay(std::string pGuitarString);
 
     // roda o motor antes adicionado
     void playMany(int pTimes);
@@ -41,13 +41,10 @@ public:
     void tune(int pTunePosition);
 
     // reseta o motor selecionado
-    void playOneStep(int pCordReset, int pSignal);
+    void playOneStep(int pGuitarReset, int pSignal);
 
     void getEnginePos(SDCard pSd);
 
-    // void displayCord();
-
-    // int getSize();
 private:
     std::vector<Engine *> mEngines;
     std::vector<Engine *> mEnginesToPlay;

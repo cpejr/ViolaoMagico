@@ -1,38 +1,38 @@
 #include "MyStepper.hpp"
 
-MyStepper::MyStepper(int _revolution, int _step, int _dir) : revolution(_revolution), STEP(_step), DIR(_dir)
+MyStepper::MyStepper(int pRevolution, int pStep, int pDir) : mRevolution(pRevolution), mSTEP(pStep), mDIR(pDir)
 {
-    pinMode(_dir, OUTPUT);
-    pinMode(_step, OUTPUT);
+    pinMode(pDir, OUTPUT);
+    pinMode(pStep, OUTPUT);
 }
 
 int MyStepper::getDir()
 {
-    return this->DIR;
+    return this->mDIR;
 }
 
-void MyStepper::setSpeed(int _speedRPM)
+void MyStepper::setSpeed(int pSpeedRPM)
 {
-    this->speedRPM = _speedRPM;
+    this->mSpeedRPM = pSpeedRPM;
 }
 
-void MyStepper::step(int _steps)
+void MyStepper::step(int pSteps)
 {
-    float frequencia = ((this->speedRPM / 60) * this->revolution);
-    int freq = frequencia;
+    float frequency = ((this->mSpeedRPM / 60) * this->mRevolution);
+    int iFreq = frequency;
 
-    if (_steps > 0)
+    if (pSteps > 0)
     {
-        float tempoMilis = (_steps / frequencia) * 1000;
-        digitalWrite(this->DIR, HIGH);
-        tone(this->STEP, freq, tempoMilis + 1);
+        float timeMs = (pSteps / frequency) * 1000;
+        digitalWrite(this->mDIR, HIGH);
+        tone(this->mSTEP, iFreq, timeMs + 1);
         // delay(tempoMilis + 1);
     }
-    if (_steps < 0)
+    if (pSteps < 0)
     {
-        float tempoMilis = -(_steps / frequencia) * 1000;
-        digitalWrite(this->DIR, LOW);
-        tone(this->STEP, freq, tempoMilis + 1);
+        float timeMs = -(pSteps / frequency) * 1000;
+        digitalWrite(this->mDIR, LOW);
+        tone(this->mSTEP, iFreq, timeMs + 1);
         // delay(tempoMilis + 1);
     }
 }

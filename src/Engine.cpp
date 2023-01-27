@@ -1,6 +1,6 @@
 #include "Engine.hpp"
 
-Engine::Engine(char pCord, int pStep, int pDir) : mCord(pCord)
+Engine::Engine(char pGuitarString, int pStep, int pDir) : mGuitarString(pGuitarString)
 {
     GLOBAL_SPEED = 90;
     GLOBAL_STEPS = 200;
@@ -15,9 +15,9 @@ Engine::Engine(char pCord, int pStep, int pDir) : mCord(pCord)
     mPosPtr = &mPosition;
 }
 
-char Engine::getCord()
+char Engine::getGuitarString()
 {
-    return this->mCord;
+    return this->mGuitarString;
 }
 
 int Engine::getTarget()

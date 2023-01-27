@@ -55,7 +55,7 @@ void readingButtons(void *parameter)
 
 EnginesSet violao;
 
-SDCard x;
+SDCard sdCard;
 // SDCard* xPtr = &x;
 
 int telaDestino = 1;
@@ -340,9 +340,9 @@ void musica(int musica)
 {
   // Declarando as variáveis locais
   tft.fillScreen(ILI9341_BLACK);
-  string batida1 = x.readFile(1, '1');
-  string batida2 = x.readFile(1, '2');
-  string batida3 = x.readFile(1, '3');
+  string batida1 = sdCard.readFile(1, '1');
+  string batida2 = sdCard.readFile(1, '2');
+  string batida3 = sdCard.readFile(1, '3');
   int nBatidas = 3;
   if (batida2.length() == 0 && batida3.length() == 0)
   {
@@ -573,7 +573,7 @@ void afinar(int *telaDestino)
       }
       delay(delayBotoes);
     }
-    violao.getEnginePos(x);
+    violao.getEnginePos(sdCard);
   }
 }
 
@@ -729,9 +729,9 @@ void resetarMotores(int *telaDestino)
 
 void ajustandoMotor(int *posicaoResetar)
 {
-  int corda = *posicaoResetar;
-  string cordas = "EADGBe";
-  char cordaChar = cordas[corda];
+  int guitarString = *posicaoResetar;
+  string guitarStrings = "EADGBe";
+  char guitarStringChr = guitarStrings[guitarString];
   tft.fillScreen(ILI9341_BLACK);
   int retornar = 0;
   int posicaoAjuste = 0;
@@ -742,7 +742,7 @@ void ajustandoMotor(int *posicaoResetar)
       tft.setCursor(0, 0);
       tft.setTextSize(3);
       tft.print("Corda ");
-      tft.print(cordaChar);
+      tft.print(guitarStringChr);
       tft.println(":");
       tft.setTextSize(2);
       tft.println("");
@@ -756,7 +756,7 @@ void ajustandoMotor(int *posicaoResetar)
       tft.setCursor(0, 0);
       tft.setTextSize(3);
       tft.print("Corda ");
-      tft.print(cordaChar);
+      tft.print(guitarStringChr);
       tft.println(":");
       tft.setTextSize(2);
       tft.println("");
@@ -770,7 +770,7 @@ void ajustandoMotor(int *posicaoResetar)
       tft.setCursor(0, 0);
       tft.setTextSize(3);
       tft.print("Corda ");
-      tft.print(cordaChar);
+      tft.print(guitarStringChr);
       tft.println(":");
       tft.setTextSize(2);
       tft.println("");
@@ -796,13 +796,13 @@ void ajustandoMotor(int *posicaoResetar)
     {
       if (posicaoAjuste == 0)
       {
-        violao.playOneStep(corda, 1);
-        violao.getEnginePos(x);
+        violao.playOneStep(guitarString, 1);
+        violao.getEnginePos(sdCard);
       }
       if (posicaoAjuste == 1)
       {
-        violao.playOneStep(corda, -1);
-        violao.getEnginePos(x);
+        violao.playOneStep(guitarString, -1);
+        violao.getEnginePos(sdCard);
       }
       if (posicaoAjuste == 2)
       {
@@ -894,7 +894,7 @@ void batidas(string batida1, string batida2, string batida3, int nBatidas)
       }
     }
 
-    violao.getEnginePos(x);
+    violao.getEnginePos(sdCard);
 
     if (buttonUpState == 0)
     {
@@ -987,7 +987,7 @@ void setup()
 
   Serial.begin(9600);
 
-  musicNames = x.getList();
+  musicNames = sdCard.getList();
   musicNumber = musicNames.size();
 
   violao.insertMotor('E', 13, 12);
