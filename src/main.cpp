@@ -30,7 +30,7 @@ int delayBotoes = 150;
 #define buttonSelect 16
 #define buttonDown 17
 
-int sairloop = 0;
+int exitLoop = 0;
 
 int GLOBAL_SPEED = 90;
 const int GLOBAL_STEPS = 200;

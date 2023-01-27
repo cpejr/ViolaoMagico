@@ -2,54 +2,54 @@
 
 EnginesSet::EnginesSet()
 {
-    sairloop = 0;
-    buttonUpState = digitalRead(buttonUp);
-    buttonSelectState = digitalRead(buttonSelect);
-    buttonDownState = digitalRead(buttonDown);
+    mExitLoop = 0;
+    mButtonUpState = digitalRead(buttonUp);
+    mButtonSelectState = digitalRead(buttonSelect);
+    mButtonDownState = digitalRead(buttonDown);
 }
 
-void EnginesSet::insertMotor(char cord, int _step, int _dir)
+void EnginesSet::insertMotor(char pCord, int pStep, int pDir)
 {
-    Engine *engineConstrutor = new Engine(cord, _step, _dir);
+    Engine *engineConstrutor = new Engine(pCord, pStep, pDir);
 
-    this->engines.push_back(engineConstrutor);
+    this->mEngines.push_back(engineConstrutor);
 }
 
 // void EnginesSet::boot(); // Lógica de fim de curso
 
-void EnginesSet::addToenginesToPlay(std::string cords)
+void EnginesSet::addToenginesToPlay(std::string pCords)
 {
-    for (auto &cord : cords)
+    for (auto &cord : pCords)
     {
-        for (auto engine : this->engines)
+        for (auto engine : this->mEngines)
         {
             if (engine->getCord() == cord)
             {
-                if (buttonUpState == 0 || buttonSelectState == 0 || buttonDownState == 0)
+                if (mButtonUpState == 0 || mButtonSelectState == 0 || mButtonDownState == 0)
                 {
-                    sairloop = 1;
+                    mExitLoop = 1;
                 }
-                this->enginesToPlay.push_back(engine);
+                this->mEnginesToPlay.push_back(engine);
             }
         }
     }
 }
 
-void EnginesSet::playMany(int times = 1)
+void EnginesSet::playMany(int pTimes = 1)
 {
-    Engine *anyEngine = this->enginesToPlay[0];
+    Engine *anyEngine = this->mEnginesToPlay[0];
 
-    for (int i = 0; i < times; i++)
+    for (int i = 0; i < pTimes; i++)
     {
         if (anyEngine->getTarget() > 0)
         {
             while (anyEngine->getPosition() < anyEngine->getTarget())
             {
-                for (auto engine : this->enginesToPlay)
+                for (auto engine : this->mEnginesToPlay)
                 {
-                    if (buttonUpState == 0 || buttonSelectState == 0 || buttonDownState == 0)
+                    if (mButtonUpState == 0 || mButtonUpState == 0 || mButtonDownState == 0)
                     {
-                        sairloop = 1;
+                        mExitLoop = 1;
                     }
                     engine->runToTarget();
                     delay(3);
@@ -60,11 +60,11 @@ void EnginesSet::playMany(int times = 1)
         {
             while (anyEngine->getPosition() > anyEngine->getTarget())
             {
-                for (auto engine : this->enginesToPlay)
+                for (auto engine : this->mEnginesToPlay)
                 {
-                    if (buttonUpState == 0 || buttonSelectState == 0 || buttonDownState == 0)
+                    if (mButtonUpState == 0 || mButtonUpState == 0 || mButtonDownState == 0)
                     {
-                        sairloop = 1;
+                        mExitLoop = 1;
                     }
                     engine->runToTarget();
                     delay(3);
@@ -72,31 +72,31 @@ void EnginesSet::playMany(int times = 1)
             }
         }
 
-        for (auto engine : this->enginesToPlay)
+        for (auto engine : this->mEnginesToPlay)
         {
             engine->reverseTarget();
         }
     }
 
-    this->enginesToPlay.clear();
+    this->mEnginesToPlay.clear();
 }
 
-void EnginesSet::parseFile(std::string stream)
+void EnginesSet::parseFile(std::string pStream)
 {
-    char cordaChar;
+    char cord;
     std::string subStream = "";
     int forControl = 0;
     int strControl = 0;
-    for (forControl; forControl < stream.size(); forControl++)
+    for (forControl; forControl < pStream.size(); forControl++)
     {
-        cordaChar = stream[forControl];
-        if (cordaChar == ' ')
+        cord = pStream[forControl];
+        if (cord == ' ')
         {
-            if (stream[forControl - 1] == 'd')
+            if (pStream[forControl - 1] == 'd')
             {
                 runThrough(DOWN);
             }
-            else if (stream[forControl - 1] == 's')
+            else if (pStream[forControl - 1] == 's')
             {
                 runThrough(UP);
             }
@@ -104,7 +104,7 @@ void EnginesSet::parseFile(std::string stream)
             {
                 for (strControl; strControl < forControl; strControl++)
                 {
-                    subStream = subStream + stream[strControl];
+                    subStream = subStream + pStream[strControl];
                 }
                 this->addToenginesToPlay(subStream);
                 Serial.println(subStream.c_str());
@@ -117,32 +117,32 @@ void EnginesSet::parseFile(std::string stream)
     }
 }
 
-void EnginesSet::runThrough(Direction direction)
+void EnginesSet::runThrough(mDirection pDirection)
 {
 
-    if (direction == UP)
+    if (pDirection == UP)
     {
-        for (auto it = this->engines.begin(); it != this->engines.end(); ++it)
+        for (auto it = this->mEngines.begin(); it != this->mEngines.end(); ++it)
         {
-            this->enginesToPlay.push_back(*it);
+            this->mEnginesToPlay.push_back(*it);
             delay(100);
             this->playMany();
         }
     }
     else
     {
-        for (auto it = this->engines.rbegin(); it != this->engines.rend(); ++it)
+        for (auto it = this->mEngines.rbegin(); it != this->mEngines.rend(); ++it)
         {
-            this->enginesToPlay.push_back(*it);
+            this->mEnginesToPlay.push_back(*it);
             delay(100);
             this->playMany();
         }
     }
 }
 
-void EnginesSet::tune(int tunePosition)
+void EnginesSet::tune(int pTunePosition)
 {
-    switch (tunePosition)
+    switch (pTunePosition)
     {
     case 0:
     {
@@ -177,35 +177,23 @@ void EnginesSet::tune(int tunePosition)
     }
 }
 
-void EnginesSet::playOneStep(int cordReset, int signal)
+void EnginesSet::playOneStep(int pCordReset, int pSignal)
 {
-    this->engines[cordReset]->oneStep(signal);
+    this->mEngines[pCordReset]->oneStep(pSignal);
 }
 
-void EnginesSet::getEnginePos(SDCard x)
+void EnginesSet::getEnginePos(SDCard pSd)
 {
     int *pos;
     char cord;
     std::vector<int> enginePos;
-    for (int i = 0; i < engines.size(); i++)
+    for (int i = 0; i < mEngines.size(); i++)
     {
-        cord = engines[i]->getCord();
-        pos = engines[i]->getPosPtr();
+        cord = mEngines[i]->getCord();
+        pos = mEngines[i]->getPosPtr();
         enginePos.push_back(*pos);
     }
-    x.writeInFile(enginePos);
-    x.printPosition("/final_position.txt");
+    pSd.writeInFile(enginePos);
+    pSd.printPosition("/final_position.txt");
     enginePos.clear();
 }
-
-// void EnginesSet::displayCord() {
-//   char cord;
-//   for (int i = 0; i < engines.size(); i++) {
-//     cord = engines[i]->getCord();
-//     Serial.println(cord);
-//   }
-// }
-
-// int EnginesSet::getSize() {
-//   return this-> engines.size();
-// }

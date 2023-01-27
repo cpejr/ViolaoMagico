@@ -1,46 +1,46 @@
 #include "Engine.hpp"
 
-Engine::Engine(char _cord, int _step, int _dir) : CORD(_cord)
+Engine::Engine(char pCord, int pStep, int pDir) : mCord(pCord)
 {
     GLOBAL_SPEED = 90;
     GLOBAL_STEPS = 200;
     GLOBAL_TARGET = 30;
-    this->stepperConstructor = new MyStepper(GLOBAL_STEPS, _step, _dir);
+    this->stepperConstructor = new MyStepper(GLOBAL_STEPS, pStep, pDir);
     this->stepperConstructor->setSpeed(GLOBAL_SPEED);
 
-    this->target = GLOBAL_TARGET;
+    this->mTarget = GLOBAL_TARGET;
 
-    this->position = 0;
+    this->mPosition = 0;
 
-    posPtr = &position;
+    mPosPtr = &mPosition;
 }
 
 char Engine::getCord()
 {
-    return this->CORD;
+    return this->mCord;
 }
 
 int Engine::getTarget()
 {
-    return this->target;
+    return this->mTarget;
 }
 
 void Engine::reverseTarget()
 {
-    this->target *= (-1);
+    this->mTarget *= (-1);
 }
 
 void Engine::runToTarget()
 {
-    if (this->target > 0)
+    if (this->mTarget > 0)
     {
         this->stepperConstructor->step(1);
-        this->position++;
+        this->mPosition++;
     }
     else
     {
         this->stepperConstructor->step(-1);
-        this->position--;
+        this->mPosition--;
     }
 
     // enginePos = getPosPtr();
@@ -48,16 +48,16 @@ void Engine::runToTarget()
 
 int Engine::getPosition()
 {
-    return this->position;
+    return this->mPosition;
 }
 
 int *Engine::getPosPtr()
 {
-    return this->posPtr;
+    return this->mPosPtr;
 }
 
 void Engine::oneStep(int signal_)
 {
     this->stepperConstructor->step(signal_ * 1);
-    this->position = 0;
+    this->mPosition = 0;
 }

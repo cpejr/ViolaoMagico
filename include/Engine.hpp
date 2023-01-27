@@ -5,20 +5,11 @@
 
 class Engine
 {
-private:
-    char CORD;    // corda
-    int target;   // posição final
-    int position; // posição atual
-    int *posPtr;  // ponteiro para gravar a posição
-    int GLOBAL_SPEED;
-    int GLOBAL_STEPS;
-    int GLOBAL_TARGET;
-
 public:
     MyStepper *stepperConstructor;
 
     // construtor do motor
-    Engine(char _cord, int _step, int _dir);
+    Engine(char pCord, int pStep, int pDir);
 
     char getCord();
 
@@ -35,6 +26,15 @@ public:
 
     // utilizado para resetar o motor
     void oneStep(int signal_);
+
+private:
+    char mCord;    // corda
+    int mTarget;   // posição final
+    int mPosition; // posição atual
+    int *mPosPtr;  // ponteiro para gravar a posição
+    int GLOBAL_SPEED;
+    int GLOBAL_STEPS;
+    int GLOBAL_TARGET;
 };
 
 #endif

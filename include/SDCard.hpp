@@ -9,10 +9,6 @@ using namespace std;
 
 class SDCard
 {
-private:
-    vector<string> filesNames;
-    int GLOBAL_SPEED;
-
 public:
     SDCard();
 
@@ -20,11 +16,15 @@ public:
 
     void Makelist();
 
-    void printPosition(std::string fileName);
+    void printPosition(std::string pFileName);
 
-    string readFile(int numFile, char numBatida);
+    string readFile(int pNumFile, char pNumStroke);
 
-    void writeInFile(vector<int> enginePos);
+    void writeInFile(vector<int> pEnginePos);
+
+private:
+    vector<string> mFilesNames;
+    int GLOBAL_SPEED;
 };
 
 #endif

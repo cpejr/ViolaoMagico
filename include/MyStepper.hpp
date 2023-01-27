@@ -5,23 +5,24 @@
 
 class MyStepper
 {
-private:
-    int DIR;        // pino do drive
-    int STEP;       // pino do drive
-    int speedRPM;   // velocidade de rotação
-    int revolution; // quantidade de passos necessários para dar uma volta completa
 public:
     // construtor do driver
-    MyStepper(int _revolution, int _step, int _dir);
+    MyStepper(int pRevolution, int pStep, int pDir);
 
     // retorna a direção de rotação
     int getDir();
 
     // atualiza a velocidade de rotação
-    void setSpeed(int _speedRPM);
+    void setSpeed(int pSpeedRPM);
 
     // funcionamento do driver em cada passo
-    void step(int _steps);
+    void step(int pSteps);
+
+private:
+    int mDIR;        // pino do drive
+    int mSTEP;       // pino do drive
+    int mSpeedRPM;   // velocidade de rotação
+    int mRevolution; // quantidade de passos necessários para dar uma volta completa
 };
 
 #endif
