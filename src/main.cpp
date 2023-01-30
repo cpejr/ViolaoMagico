@@ -25,7 +25,7 @@ int j;
 #define CS 33
 Adafruit_ILI9341 tft = Adafruit_ILI9341(CS, DC);
 
-int delayBotoes = 150;
+int delayButtons = 150;
 #define buttonUp 3
 #define buttonSelect 16
 #define buttonDown 17
@@ -53,21 +53,21 @@ void readingButtons(void *parameter)
   }
 }
 
-EnginesSet violao;
+EnginesSet guitar;
 
 SDCard sdCard;
 // SDCard* xPtr = &x;
 
-int telaDestino = 1;
+int targetScreen = 1;
 
-void configuracoes(int *telaDestino)
+void settings(int *targetScreen)
 {
   tft.fillScreen(ILI9341_BLACK);
-  int retornar = 0;
-  int posicaoConf = 2;
-  while (retornar == 0)
+  int goBack = 0;
+  int posSettings = 2;
+  while (goBack == 0)
   {
-    if (posicaoConf == 2)
+    if (posSettings == 2)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -79,7 +79,7 @@ void configuracoes(int *telaDestino)
       tft.println(" Afinar");
       tft.println(" Resetar motores");
     }
-    if (posicaoConf == 3)
+    if (posSettings == 3)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -91,7 +91,7 @@ void configuracoes(int *telaDestino)
       tft.println("Afinar");
       tft.println(" Resetar motores");
     }
-    if (posicaoConf == 4)
+    if (posSettings == 4)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -104,35 +104,35 @@ void configuracoes(int *telaDestino)
       tft.println("Resetar motores");
     }
 
-    if (buttonUpState == 0 && posicaoConf != 2)
+    if (buttonUpState == 0 && posSettings != 2)
     {
-      posicaoConf--;
+      posSettings--;
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      delay(delayBotoes);
+      delay(delayButtons);
     }
-    if (buttonDownState == 0 && posicaoConf != 4)
+    if (buttonDownState == 0 && posSettings != 4)
     {
-      posicaoConf++;
+      posSettings++;
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      delay(delayBotoes);
+      delay(delayButtons);
     }
     if (buttonSelectState == 0)
     {
-      retornar = 1;
-      delay(delayBotoes);
+      goBack = 1;
+      delay(delayButtons);
     }
   }
-  *telaDestino = posicaoConf;
+  *targetScreen = posSettings;
 }
 
-void menu(int *telaDestino)
+void menu(int *targetScreen)
 {
   // Declarando as variáveis locais
   tft.fillScreen(ILI9341_BLACK);
-  int voltarCursor = 0;
-  int musicaAtual = 0;
-  int retornar = 0;
-  int posicaoDoMenu = 1;
+  int goBackCursor = 0;
+  int selectedMusic = 0;
+  int goBack = 0;
+  int menuPos = 1;
   int screenNumber = musicNumber / 10;
   int lastMusicScreenNumber = musicNumber % 10;
   int presentScreen = 0;
@@ -140,8 +140,8 @@ void menu(int *telaDestino)
   {
     screenNumber += 1;
   }
-  int posicaoDoMenuMax = musicNumber + screenNumber;
-  while (retornar == 0)
+  int menuPosMax = musicNumber + screenNumber;
+  while (goBack == 0)
   {
     if (presentScreen == 0)
     {
@@ -154,13 +154,13 @@ void menu(int *telaDestino)
         tft.println("");
         for (j = 1; j < musicNumber + 1; j++)
         {
-          if (posicaoDoMenu == j)
+          if (menuPos == j)
           {
             tft.write(16);
             tft.print(j);
             tft.print("-");
             tft.println(musicNames[j - 1].c_str());
-            musicaAtual = j;
+            selectedMusic = j;
           }
           else
           {
@@ -170,16 +170,16 @@ void menu(int *telaDestino)
             tft.println(musicNames[j - 1].c_str());
           }
         }
-        if (posicaoDoMenu == posicaoDoMenuMax)
+        if (menuPos == menuPosMax)
         {
           tft.write(16);
           tft.print("Voltar ");
-          voltarCursor = 1;
+          goBackCursor = 1;
         }
         else
         {
           tft.print(" Voltar ");
-          voltarCursor = 0;
+          goBackCursor = 0;
         }
       }
       if (musicNumber > 9)
@@ -191,13 +191,13 @@ void menu(int *telaDestino)
         tft.println("");
         for (j = 1; j < 11; j++)
         {
-          if (posicaoDoMenu == j)
+          if (menuPos == j)
           {
             tft.write(16);
             tft.print(j);
             tft.print("-");
             tft.println(musicNames[j - 1].c_str());
-            musicaAtual = j;
+            selectedMusic = j;
           }
           else
           {
@@ -207,16 +207,16 @@ void menu(int *telaDestino)
             tft.println(musicNames[j - 1].c_str());
           }
         }
-        if (posicaoDoMenu % 11 == 0)
+        if (menuPos % 11 == 0)
         {
           tft.write(16);
           tft.print("Voltar ");
-          voltarCursor = 1;
+          goBackCursor = 1;
         }
         else
         {
           tft.print(" Voltar ");
-          voltarCursor = 0;
+          goBackCursor = 0;
         }
       }
       delay(10);
@@ -230,13 +230,13 @@ void menu(int *telaDestino)
       tft.println("");
       for (j = (10 * presentScreen) + 1; j < (10 * (presentScreen + 1)) + 1; j++)
       {
-        if ((posicaoDoMenu - presentScreen) == j)
+        if ((menuPos - presentScreen) == j)
         {
           tft.write(16);
           tft.print(j);
           tft.print("-");
           tft.println(musicNames[j - 1].c_str());
-          musicaAtual = j;
+          selectedMusic = j;
         }
         else
         {
@@ -246,16 +246,16 @@ void menu(int *telaDestino)
           tft.println(musicNames[j - 1].c_str());
         }
       }
-      if (posicaoDoMenu % 11 == 0)
+      if (menuPos % 11 == 0)
       {
         tft.write(16);
         tft.print("Voltar ");
-        voltarCursor = 1;
+        goBackCursor = 1;
       }
       else
       {
         tft.print(" Voltar ");
-        voltarCursor = 0;
+        goBackCursor = 0;
       }
     }
     if (presentScreen == screenNumber - 1 && screenNumber != 1)
@@ -267,13 +267,13 @@ void menu(int *telaDestino)
       tft.println("");
       for (j = (10 * presentScreen) + 1; j < musicNumber + 1; j++)
       {
-        if ((posicaoDoMenu - presentScreen) == j)
+        if ((menuPos - presentScreen) == j)
         {
           tft.write(16);
           tft.print(j);
           tft.print("-");
           tft.println(musicNames[j - 1].c_str());
-          musicaAtual = j;
+          selectedMusic = j;
         }
         else
         {
@@ -283,88 +283,88 @@ void menu(int *telaDestino)
           tft.println(musicNames[j - 1].c_str());
         }
       }
-      if (posicaoDoMenu == posicaoDoMenuMax)
+      if (menuPos == menuPosMax)
       {
         tft.write(16);
         tft.print("Voltar ");
-        voltarCursor = 1;
+        goBackCursor = 1;
       }
       else
       {
         tft.print(" Voltar ");
-        voltarCursor = 0;
+        goBackCursor = 0;
       }
     }
     delay(10);
 
-    if (buttonUpState == 0 && posicaoDoMenu != 1)
+    if (buttonUpState == 0 && menuPos != 1)
     {
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      posicaoDoMenu--;
-      if (posicaoDoMenu % 11 == 0)
+      menuPos--;
+      if (menuPos % 11 == 0)
       {
         presentScreen--;
         tft.fillScreen(ILI9341_BLACK);
       }
-      delay(delayBotoes);
+      delay(delayButtons);
     }
-    if (buttonDownState == 0 && posicaoDoMenu != posicaoDoMenuMax)
+    if (buttonDownState == 0 && menuPos != menuPosMax)
     {
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      if (posicaoDoMenu % 11 == 0)
+      if (menuPos % 11 == 0)
       {
         presentScreen++;
         tft.fillScreen(ILI9341_BLACK);
       }
-      posicaoDoMenu++;
-      delay(delayBotoes);
+      menuPos++;
+      delay(delayButtons);
     }
     if (buttonSelectState == 0)
     {
-      if (voltarCursor == 0)
+      if (goBackCursor == 0)
       {
-        musica(musicaAtual);
-        delay(delayBotoes);
+        music(selectedMusic);
+        delay(delayButtons);
       }
       else
       {
-        *telaDestino = 1;
-        retornar = 1;
-        delay(delayBotoes);
+        *targetScreen = 1;
+        goBack = 1;
+        delay(delayButtons);
       }
     }
   }
 }
 
-void musica(int musica)
+void music(int music)
 {
   // Declarando as variáveis locais
   tft.fillScreen(ILI9341_BLACK);
-  string batida1 = sdCard.readFile(1, '1');
-  string batida2 = sdCard.readFile(1, '2');
-  string batida3 = sdCard.readFile(1, '3');
-  int nBatidas = 3;
-  if (batida2.length() == 0 && batida3.length() == 0)
+  string firstStroke = sdCard.readFile(1, '1');
+  string secondStroke = sdCard.readFile(1, '2');
+  string thirdStroke = sdCard.readFile(1, '3');
+  int nStrokes = 3;
+  if (secondStroke.length() == 0 && thirdStroke.length() == 0)
   {
-    nBatidas = 1;
+    nStrokes = 1;
   }
-  if (batida2.length() != 0 && batida3.length() == 0)
+  if (secondStroke.length() != 0 && thirdStroke.length() == 0)
   {
-    nBatidas = 2;
+    nStrokes = 2;
   }
 
-  int retornar = 0;
-  int retornarMusica = 0;
-  int posicaoDoMenu = 1;
-  while (retornarMusica == 0)
+  int goBack = 0;
+  int goBackMusica = 0;
+  int menuPos = 1;
+  while (goBackMusica == 0)
   {
-    while (retornar == 0)
+    while (goBack == 0)
     {
-      if (posicaoDoMenu == 1)
+      if (menuPos == 1)
       {
         tft.setCursor(0, 0);
         tft.setTextSize(3);
-        tft.print(musicNames[musica - 1].c_str());
+        tft.print(musicNames[music - 1].c_str());
         tft.println(":");
         tft.setTextSize(2);
         tft.println("");
@@ -374,11 +374,11 @@ void musica(int musica)
         tft.println("Tocar");
         tft.println(" Voltar");
       }
-      if (posicaoDoMenu == 2)
+      if (menuPos == 2)
       {
         tft.setCursor(0, 0);
         tft.setTextSize(3);
-        tft.print(musicNames[musica - 1].c_str());
+        tft.print(musicNames[music - 1].c_str());
         tft.println(":");
         tft.setTextSize(2);
         tft.println("");
@@ -389,51 +389,51 @@ void musica(int musica)
         tft.println("Voltar");
       }
 
-      if (buttonUpState == 0 && posicaoDoMenu != 1)
+      if (buttonUpState == 0 && menuPos != 1)
       {
-        posicaoDoMenu--;
+        menuPos--;
         tft.fillRect(0, 200, 10, 40, ILI9341_BLACK);
-        delay(delayBotoes);
+        delay(delayButtons);
       }
-      if (buttonDownState == 0 && posicaoDoMenu != 2)
+      if (buttonDownState == 0 && menuPos != 2)
       {
-        posicaoDoMenu++;
+        menuPos++;
         tft.fillRect(0, 200, 10, 40, ILI9341_BLACK);
-        delay(delayBotoes);
+        delay(delayButtons);
       }
       if (buttonSelectState == 0)
       {
-        retornar = 1;
+        goBack = 1;
         tft.fillScreen(ILI9341_BLACK);
-        delay(delayBotoes);
+        delay(delayButtons);
       }
     }
-    if (posicaoDoMenu == 1)
+    if (menuPos == 1)
     {
-      batidas(batida1, batida2, batida3, nBatidas);
-      retornar = 0;
+      strokes(firstStroke, secondStroke, thirdStroke, nStrokes);
+      goBack = 0;
     }
-    if (posicaoDoMenu == 2)
+    if (menuPos == 2)
     {
-      retornarMusica = 1;
+      goBackMusica = 1;
     }
   }
 }
 
-int posicaoAfinar = 0;
-void task_tune(void *parameter) // Tem que estar nessa posição, depois de setEngine e antes de afinar
+int tunePos = 0;
+void taskTune(void *parameter) // Tem que estar nessa posição, depois de setEngine e antes de afinar
 {
-  violao.tune(posicaoAfinar);
+  guitar.tune(tunePos);
   vTaskDelete(NULL);
 }
-void afinar(int *telaDestino)
+void afinar(int *targetScreen)
 {
   tft.fillScreen(ILI9341_BLACK);
-  int retornar = 0;
-  posicaoAfinar = 0;
-  while (retornar == 0)
+  int goBack = 0;
+  tunePos = 0;
+  while (goBack == 0)
   {
-    if (posicaoAfinar == 0)
+    if (tunePos == 0)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -449,7 +449,7 @@ void afinar(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoAfinar == 1)
+    if (tunePos == 1)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -465,7 +465,7 @@ void afinar(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoAfinar == 2)
+    if (tunePos == 2)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -481,7 +481,7 @@ void afinar(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoAfinar == 3)
+    if (tunePos == 3)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -497,7 +497,7 @@ void afinar(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoAfinar == 4)
+    if (tunePos == 4)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -513,7 +513,7 @@ void afinar(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoAfinar == 5)
+    if (tunePos == 5)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -529,7 +529,7 @@ void afinar(int *telaDestino)
       tft.println("Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoAfinar == 6)
+    if (tunePos == 6)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -547,44 +547,44 @@ void afinar(int *telaDestino)
     }
     delay(10);
 
-    if (buttonUpState == 0 && posicaoAfinar != 0)
+    if (buttonUpState == 0 && tunePos != 0)
     {
-      posicaoAfinar--;
+      tunePos--;
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      delay(delayBotoes);
+      delay(delayButtons);
     }
-    if (buttonDownState == 0 && posicaoAfinar != 6)
+    if (buttonDownState == 0 && tunePos != 6)
     {
-      posicaoAfinar++;
+      tunePos++;
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      delay(delayBotoes);
+      delay(delayButtons);
     }
     if (buttonSelectState == 0)
     {
-      if (posicaoAfinar != 6)
+      if (tunePos != 6)
       {
-        xTaskCreatePinnedToCore(task_tune, "task_tune", 1000, NULL, 1, NULL, 0);
+        xTaskCreatePinnedToCore(taskTune, "taskTune", 1000, NULL, 1, NULL, 0);
       }
       else
       {
         tft.fillScreen(ILI9341_BLACK);
-        retornar = 1;
-        *telaDestino = 1;
+        goBack = 1;
+        *targetScreen = 1;
       }
-      delay(delayBotoes);
+      delay(delayButtons);
     }
-    violao.getEnginePos(sdCard);
+    guitar.getEnginePos(sdCard);
   }
 }
 
-void resetarMotores(int *telaDestino)
+void resetEngines(int *targetScreen)
 {
   tft.fillScreen(ILI9341_BLACK);
-  int retornar = 0;
-  int posicaoResetar = 0;
-  while (retornar == 0)
+  int goBack = 0;
+  int resetPos = 0;
+  while (goBack == 0)
   {
-    if (posicaoResetar == 0)
+    if (resetPos == 0)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -600,7 +600,7 @@ void resetarMotores(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoResetar == 1)
+    if (resetPos == 1)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -616,7 +616,7 @@ void resetarMotores(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoResetar == 2)
+    if (resetPos == 2)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -632,7 +632,7 @@ void resetarMotores(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoResetar == 3)
+    if (resetPos == 3)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -648,7 +648,7 @@ void resetarMotores(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoResetar == 4)
+    if (resetPos == 4)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -664,7 +664,7 @@ void resetarMotores(int *telaDestino)
       tft.println(" Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoResetar == 5)
+    if (resetPos == 5)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -680,7 +680,7 @@ void resetarMotores(int *telaDestino)
       tft.println("Corda e");
       tft.println(" Voltar");
     }
-    if (posicaoResetar == 6)
+    if (resetPos == 6)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -698,46 +698,46 @@ void resetarMotores(int *telaDestino)
     }
     delay(10);
 
-    if (buttonUpState == 0 && posicaoResetar != 0)
+    if (buttonUpState == 0 && resetPos != 0)
     {
-      posicaoResetar--;
+      resetPos--;
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      delay(delayBotoes);
+      delay(delayButtons);
     }
-    if (buttonDownState == 0 && posicaoResetar != 6)
+    if (buttonDownState == 0 && resetPos != 6)
     {
-      posicaoResetar++;
+      resetPos++;
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      delay(delayBotoes);
+      delay(delayButtons);
     }
     if (buttonSelectState == 0)
     {
-      if (posicaoResetar != 6)
+      if (resetPos != 6)
       {
-        ajustandoMotor(&posicaoResetar);
+        adjustEngine(&resetPos);
       }
       else
       {
         tft.fillScreen(ILI9341_BLACK);
-        retornar = 1;
-        *telaDestino = 1;
+        goBack = 1;
+        *targetScreen = 1;
       }
-      delay(delayBotoes);
+      delay(delayButtons);
     }
   }
 }
 
-void ajustandoMotor(int *posicaoResetar)
+void adjustEngine(int *resetPos)
 {
-  int guitarString = *posicaoResetar;
+  int guitarString = *resetPos;
   string guitarStrings = "EADGBe";
   char guitarStringChr = guitarStrings[guitarString];
   tft.fillScreen(ILI9341_BLACK);
-  int retornar = 0;
-  int posicaoAjuste = 0;
-  while (retornar == 0)
+  int goBack = 0;
+  int adjustPos = 0;
+  while (goBack == 0)
   {
-    if (posicaoAjuste == 0)
+    if (adjustPos == 0)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -751,7 +751,7 @@ void ajustandoMotor(int *posicaoResetar)
       tft.println(" Descer");
       tft.println(" Pronto");
     }
-    if (posicaoAjuste == 1)
+    if (adjustPos == 1)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -765,7 +765,7 @@ void ajustandoMotor(int *posicaoResetar)
       tft.println("Descer");
       tft.println(" Pronto");
     }
-    if (posicaoAjuste == 2)
+    if (adjustPos == 2)
     {
       tft.setCursor(0, 0);
       tft.setTextSize(3);
@@ -780,59 +780,59 @@ void ajustandoMotor(int *posicaoResetar)
       tft.println("Pronto");
     }
 
-    if (buttonUpState == 0 && posicaoAjuste != 0)
+    if (buttonUpState == 0 && adjustPos != 0)
     {
-      posicaoAjuste--;
+      adjustPos--;
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      delay(delayBotoes);
+      delay(delayButtons);
     }
-    if (buttonDownState == 0 && posicaoAjuste != 2)
+    if (buttonDownState == 0 && adjustPos != 2)
     {
-      posicaoAjuste++;
+      adjustPos++;
       tft.fillRect(0, 24, 10, 225, ILI9341_BLACK);
-      delay(delayBotoes);
+      delay(delayButtons);
     }
     if (buttonSelectState == 0)
     {
-      if (posicaoAjuste == 0)
+      if (adjustPos == 0)
       {
-        violao.playOneStep(guitarString, 1);
-        violao.getEnginePos(sdCard);
+        guitar.playOneStep(guitarString, 1);
+        guitar.getEnginePos(sdCard);
       }
-      if (posicaoAjuste == 1)
+      if (adjustPos == 1)
       {
-        violao.playOneStep(guitarString, -1);
-        violao.getEnginePos(sdCard);
+        guitar.playOneStep(guitarString, -1);
+        guitar.getEnginePos(sdCard);
       }
-      if (posicaoAjuste == 2)
+      if (adjustPos == 2)
       {
         tft.fillScreen(ILI9341_BLACK);
-        retornar = 1;
-        *posicaoResetar = 1;
-        delay(delayBotoes);
+        goBack = 1;
+        *resetPos = 1;
+        delay(delayButtons);
       }
     }
   }
 }
 
-int lastBatida = 0;
-string definedBatida = "";
-void task_batida(void *parameter)
+int lastStroke = 0;
+string defStroke = "";
+void taskStroke(void *parameter)
 {
-  violao.parseFile(definedBatida);
-  lastBatida = 0;
+  guitar.parseFile(defStroke);
+  lastStroke = 0;
   vTaskDelete(NULL);
 }
 
-void batidas(string batida1, string batida2, string batida3, int nBatidas)
+void strokes(string firstStroke, string secondStroke, string thirdStroke, int nStrokes)
 {
   tft.fillScreen(ILI9341_BLACK);
   ;
-  int retornoTocando = 0;
-  int posicaoTocando = 1;
-  while (retornoTocando == 0)
+  int returnPlaying = 0;
+  int playingPos = 1;
+  while (returnPlaying == 0)
   {
-    if (posicaoTocando == 1)
+    if (playingPos == 1)
     {
       tft.setCursor(80, 0);
       tft.setTextSize(3);
@@ -845,14 +845,14 @@ void batidas(string batida1, string batida2, string batida3, int nBatidas)
       tft.setCursor(100, 160);
       tft.write(16);
       tft.println("Voltar");
-      definedBatida = batida1;
-      if (lastBatida == 0)
+      defStroke = firstStroke;
+      if (lastStroke == 0)
       {
-        lastBatida = 1;
-        xTaskCreatePinnedToCore(task_batida, "task_batida", 1000, NULL, 1, NULL, 0);
+        lastStroke = 1;
+        xTaskCreatePinnedToCore(taskStroke, "taskStroke", 1000, NULL, 1, NULL, 0);
       }
     }
-    if (posicaoTocando == 2)
+    if (playingPos == 2)
     {
       tft.setCursor(80, 0);
       tft.setTextSize(3);
@@ -865,14 +865,14 @@ void batidas(string batida1, string batida2, string batida3, int nBatidas)
       tft.setCursor(100, 160);
       tft.write(16);
       tft.println("Voltar");
-      definedBatida = batida2;
-      if (lastBatida == 0)
+      defStroke = secondStroke;
+      if (lastStroke == 0)
       {
-        lastBatida = 1;
-        xTaskCreatePinnedToCore(task_batida, "task_batida", 1000, NULL, 1, NULL, 0);
+        lastStroke = 1;
+        xTaskCreatePinnedToCore(taskStroke, "taskStroke", 1000, NULL, 1, NULL, 0);
       }
     }
-    if (posicaoTocando == 3)
+    if (playingPos == 3)
     {
       tft.setCursor(0, 0);
       tft.setCursor(80, 0);
@@ -886,96 +886,96 @@ void batidas(string batida1, string batida2, string batida3, int nBatidas)
       tft.setCursor(100, 160);
       tft.write(16);
       tft.println("Voltar");
-      definedBatida = batida3;
-      if (lastBatida == 0)
+      defStroke = thirdStroke;
+      if (lastStroke == 0)
       {
-        lastBatida = 1;
-        xTaskCreatePinnedToCore(task_batida, "task_batida", 1000, NULL, 1, NULL, 0);
+        lastStroke = 1;
+        xTaskCreatePinnedToCore(taskStroke, "taskStroke", 1000, NULL, 1, NULL, 0);
       }
     }
 
-    violao.getEnginePos(sdCard);
+    guitar.getEnginePos(sdCard);
 
     if (buttonUpState == 0)
     {
       tft.fillRect(200, 0, 30, 30, ILI9341_BLACK);
-      if (nBatidas == 3)
+      if (nStrokes == 3)
       {
-        if (posicaoTocando != 1)
+        if (playingPos != 1)
         {
-          posicaoTocando--;
+          playingPos--;
         }
         else
         {
-          posicaoTocando = 3;
+          playingPos = 3;
         }
       }
-      if (nBatidas == 2)
+      if (nStrokes == 2)
       {
-        if (posicaoTocando != 1)
+        if (playingPos != 1)
         {
-          posicaoTocando--;
+          playingPos--;
         }
         else
         {
-          posicaoTocando = 2;
+          playingPos = 2;
         }
       }
-      if (nBatidas == 1)
+      if (nStrokes == 1)
       {
-        if (posicaoTocando != 1)
+        if (playingPos != 1)
         {
-          posicaoTocando--;
+          playingPos--;
         }
         else
         {
-          posicaoTocando = 1;
+          playingPos = 1;
         }
       }
-      delay(delayBotoes);
+      delay(delayButtons);
     }
     if (buttonDownState == 0)
     {
       tft.fillRect(200, 0, 30, 30, ILI9341_BLACK);
-      if (nBatidas == 3)
+      if (nStrokes == 3)
       {
-        if (posicaoTocando != 3)
+        if (playingPos != 3)
         {
-          posicaoTocando++;
+          playingPos++;
         }
         else
         {
-          posicaoTocando = 1;
+          playingPos = 1;
         }
       }
-      if (nBatidas == 2)
+      if (nStrokes == 2)
       {
-        if (posicaoTocando != 2)
+        if (playingPos != 2)
         {
-          posicaoTocando++;
+          playingPos++;
         }
         else
         {
-          posicaoTocando = 1;
+          playingPos = 1;
         }
       }
-      if (nBatidas == 1)
+      if (nStrokes == 1)
       {
-        if (posicaoTocando != 1)
+        if (playingPos != 1)
         {
-          posicaoTocando++;
+          playingPos++;
         }
         else
         {
-          posicaoTocando = 1;
+          playingPos = 1;
         }
       }
-      delay(delayBotoes);
+      delay(delayButtons);
     }
     if (buttonSelectState == 0)
     {
-      retornoTocando = 1;
-      delay(delayBotoes);
+      returnPlaying = 1;
+      delay(delayButtons);
     }
   }
   tft.fillScreen(ILI9341_BLACK);
@@ -990,12 +990,12 @@ void setup()
   musicNames = sdCard.getList();
   musicNumber = musicNames.size();
 
-  violao.insertMotor('E', 13, 12);
-  violao.insertMotor('A', 14, 27);
-  violao.insertMotor('D', 26, 25);
-  violao.insertMotor('G', 21, 22);
-  violao.insertMotor('B', 15, 2);
-  violao.insertMotor('e', 4, 1);
+  guitar.insertMotor('E', 13, 12);
+  guitar.insertMotor('A', 14, 27);
+  guitar.insertMotor('D', 26, 25);
+  guitar.insertMotor('G', 21, 22);
+  guitar.insertMotor('B', 15, 2);
+  guitar.insertMotor('e', 4, 1);
 
   // Teste para a inicialização do TFT
   tft.begin();
@@ -1025,26 +1025,26 @@ void setup()
 
 void loop()
 {
-  switch (telaDestino)
+  switch (targetScreen)
   {
   case 1:
   {
-    configuracoes(&telaDestino);
+    settings(&targetScreen);
     break;
   }
   case 2:
   {
-    menu(&telaDestino);
+    menu(&targetScreen);
     break;
   }
   case 3:
   {
-    afinar(&telaDestino);
+    afinar(&targetScreen);
     break;
   }
   case 4:
   {
-    resetarMotores(&telaDestino);
+    resetEngines(&targetScreen);
     break;
   }
   }
