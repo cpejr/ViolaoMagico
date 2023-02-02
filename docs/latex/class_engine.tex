@@ -1,0 +1,157 @@
+\hypertarget{class_engine}{}\doxysection{Referência à classe Engine}
+\label{class_engine}\index{Engine@{Engine}}
+
+
+A classe \mbox{\hyperlink{class_engine}{Engine}} corresponde a único um motor.  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+hpp$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_ae8be665dc68750a230bb142ffca7a0e6}{Engine}} (char p\+Guitar\+String, int p\+Step, int p\+Dir)
+\begin{DoxyCompactList}\small\item\em Construtor do motor. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_engine_a3bc5058825bd35f706d2f46a17523c80}{get\+Guitar\+String}} ()
+\begin{DoxyCompactList}\small\item\em Getter que retorna a corda do violão que o motor é responsável. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_engine_aa1ebdc023400cd94eb0bde3f4e067882}{get\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Getter que retorna os passos que o motor precisa andar para tocar uma corda. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_ab533b18e82466330fb65aba1ad047c97}{reverse\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Função que coloca reverte o target, para o motor fazer o movimento de subida e descida na corda. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a6d55a0f19d4e19dbb873dde0da47a5f7}{run\+To\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Função que faz o motor fazer o movimento até o alvo de passos. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_engine_aa7d9f6c4d6822fbf63de2be5f6529b50}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Getter que retorna a posição do motor. \end{DoxyCompactList}\item 
+int $\ast$ \mbox{\hyperlink{class_engine_a533c6dfa2c40c45edd87b0d3eeb5c7df}{get\+Pos\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Getter que retorna o ponteiro referente a posição do motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_ae71a7b6a017ea179950930810ca632c2}{one\+Step}} (int signal\+\_\+)
+\begin{DoxyCompactList}\small\item\em Faz com que o motor ande um passo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_my_stepper}{My\+Stepper}} $\ast$ \mbox{\hyperlink{class_engine_a52392ff3cdebb4e3156235add6271af4}{stepper\+Constructor}}
+\begin{DoxyCompactList}\small\item\em Ponteiro de acesso direto às funções do objeto Stepper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+A classe \mbox{\hyperlink{class_engine}{Engine}} corresponde a único um motor. 
+
+Os atributos do motor são o seu identificador (m\+Guitar\+String) , a sua posição (m\+Position) e o seu alvo (m\+Target). Em um motor de passo, é interessante salvar a posição atual do motor tendo em vista que ele próprio não consegue fazer isso quando ligado. 
+
+\doxysubsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{class_engine_ae8be665dc68750a230bb142ffca7a0e6}\label{class_engine_ae8be665dc68750a230bb142ffca7a0e6}} 
+\index{Engine@{Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Engine()}{Engine()}}
+{\footnotesize\ttfamily Engine\+::\+Engine (\begin{DoxyParamCaption}\item[{char}]{p\+Guitar\+String,  }\item[{int}]{p\+Step,  }\item[{int}]{p\+Dir }\end{DoxyParamCaption})}
+
+
+
+Construtor do motor. 
+
+Inicializa as variaveis privadas referentes aos pinos dos motores e a corda do violão. 
+\begin{DoxyParams}{Parâmetros}
+{\em p\+Guitar\+String} & Corda do violão \\
+\hline
+{\em p\+Step,p\+Dir} & pinos do motor \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{class_engine_a3bc5058825bd35f706d2f46a17523c80}\label{class_engine_a3bc5058825bd35f706d2f46a17523c80}} 
+\index{Engine@{Engine}!getGuitarString@{getGuitarString}}
+\index{getGuitarString@{getGuitarString}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getGuitarString()}{getGuitarString()}}
+{\footnotesize\ttfamily char Engine\+::get\+Guitar\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter que retorna a corda do violão que o motor é responsável. 
+
+\mbox{\Hypertarget{class_engine_aa7d9f6c4d6822fbf63de2be5f6529b50}\label{class_engine_aa7d9f6c4d6822fbf63de2be5f6529b50}} 
+\index{Engine@{Engine}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily int Engine\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter que retorna a posição do motor. 
+
+\mbox{\Hypertarget{class_engine_a533c6dfa2c40c45edd87b0d3eeb5c7df}\label{class_engine_a533c6dfa2c40c45edd87b0d3eeb5c7df}} 
+\index{Engine@{Engine}!getPosPtr@{getPosPtr}}
+\index{getPosPtr@{getPosPtr}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getPosPtr()}{getPosPtr()}}
+{\footnotesize\ttfamily int $\ast$ Engine\+::get\+Pos\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter que retorna o ponteiro referente a posição do motor. 
+
+\mbox{\Hypertarget{class_engine_aa1ebdc023400cd94eb0bde3f4e067882}\label{class_engine_aa1ebdc023400cd94eb0bde3f4e067882}} 
+\index{Engine@{Engine}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}}
+{\footnotesize\ttfamily int Engine\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter que retorna os passos que o motor precisa andar para tocar uma corda. 
+
+\mbox{\Hypertarget{class_engine_ae71a7b6a017ea179950930810ca632c2}\label{class_engine_ae71a7b6a017ea179950930810ca632c2}} 
+\index{Engine@{Engine}!oneStep@{oneStep}}
+\index{oneStep@{oneStep}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{oneStep()}{oneStep()}}
+{\footnotesize\ttfamily void Engine\+::one\+Step (\begin{DoxyParamCaption}\item[{int}]{signal\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Faz com que o motor ande um passo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em signal\+\_\+} & to be explained \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engine_ab533b18e82466330fb65aba1ad047c97}\label{class_engine_ab533b18e82466330fb65aba1ad047c97}} 
+\index{Engine@{Engine}!reverseTarget@{reverseTarget}}
+\index{reverseTarget@{reverseTarget}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{reverseTarget()}{reverseTarget()}}
+{\footnotesize\ttfamily void Engine\+::reverse\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função que coloca reverte o target, para o motor fazer o movimento de subida e descida na corda. 
+
+\mbox{\Hypertarget{class_engine_a6d55a0f19d4e19dbb873dde0da47a5f7}\label{class_engine_a6d55a0f19d4e19dbb873dde0da47a5f7}} 
+\index{Engine@{Engine}!runToTarget@{runToTarget}}
+\index{runToTarget@{runToTarget}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{runToTarget()}{runToTarget()}}
+{\footnotesize\ttfamily void Engine\+::run\+To\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função que faz o motor fazer o movimento até o alvo de passos. 
+
+
+
+\doxysubsection{Documentação dos dados membro}
+\mbox{\Hypertarget{class_engine_a52392ff3cdebb4e3156235add6271af4}\label{class_engine_a52392ff3cdebb4e3156235add6271af4}} 
+\index{Engine@{Engine}!stepperConstructor@{stepperConstructor}}
+\index{stepperConstructor@{stepperConstructor}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{stepperConstructor}{stepperConstructor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_stepper}{My\+Stepper}}$\ast$ Engine\+::stepper\+Constructor}
+
+
+
+Ponteiro de acesso direto às funções do objeto Stepper. 
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_engine_8hpp}{Engine.\+hpp}}\item 
+src/\mbox{\hyperlink{_engine_8cpp}{Engine.\+cpp}}\end{DoxyCompactItemize}

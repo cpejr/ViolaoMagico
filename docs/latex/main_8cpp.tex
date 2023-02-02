@@ -1,0 +1,327 @@
+\hypertarget{main_8cpp}{}\doxysection{Referência ao ficheiro src/main.cpp}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include $<$SPI.\+h$>$}\newline
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+GFX.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+SSD1306.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+ILI9341.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}SDCard.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}My\+Stepper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Engine.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Engines\+Set.\+hpp\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a0caba21dab832e280875be65012b30fc}{DC}}~32
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a3780e2fe762dc532df7d0f030b55caa0}{CS}}~33
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a0b37bf7e800724fa443e80bcdc71ac4e}{button\+Up}}~3
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a0b6eefa2fdcb63fea8d80a3d30c93524}{button\+Select}}~16
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ab600a6545cc9b800c55fc6e754a320b1}{button\+Down}}~17
+\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a4fdf34bdf61fa969661595a7fd447024}{reading\+Buttons}} (void $\ast$parameter)
+\item 
+void \mbox{\hyperlink{main_8cpp_ac6f18a42635ed7e63d36fba413427024}{settings}} (int $\ast$\mbox{\hyperlink{main_8cpp_a20b533f8bef72e33ddb371cf3c46f6ba}{target\+Screen}})
+\item 
+void \mbox{\hyperlink{main_8cpp_a2a01e1e3e0be2b392c16355d803d86ab}{menu}} (int $\ast$\mbox{\hyperlink{main_8cpp_a20b533f8bef72e33ddb371cf3c46f6ba}{target\+Screen}})
+\item 
+void \mbox{\hyperlink{main_8cpp_a8f7dd7c5a153bcd1fce6b42b4cc59e98}{music}} (int music)
+\item 
+void \mbox{\hyperlink{main_8cpp_ac00af8a8534b6a149ab50b847914bce3}{task\+Tune}} (void $\ast$parameter)
+\item 
+void \mbox{\hyperlink{main_8cpp_a046df17c8a290ef943ed1ba28270b6d8}{afinar}} (int $\ast$\mbox{\hyperlink{main_8cpp_a20b533f8bef72e33ddb371cf3c46f6ba}{target\+Screen}})
+\item 
+void \mbox{\hyperlink{main_8cpp_ad3d8499f38ab786c160dbf5de4b54cd7}{reset\+Engines}} (int $\ast$\mbox{\hyperlink{main_8cpp_a20b533f8bef72e33ddb371cf3c46f6ba}{target\+Screen}})
+\item 
+void \mbox{\hyperlink{main_8cpp_a6454f0addbd6ffb7f2337ef8e6a39df9}{adjust\+Engine}} (int $\ast$reset\+Pos)
+\item 
+void \mbox{\hyperlink{main_8cpp_a5c8d798f38126ae0214b0893e36ed3f2}{task\+Stroke}} (void $\ast$parameter)
+\item 
+void \mbox{\hyperlink{main_8cpp_a6de041ed929a066ca2521f0880be7e93}{strokes}} (string first\+Stroke, string second\+Stroke, string third\+Stroke, int n\+Strokes)
+\item 
+void \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{main_8cpp_af37a8be2fe16f11b0ea65a5119419e53}{Task\+\_\+\+Buttons}}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{main_8cpp_ab79e6ef1053ff4c4f58fac5849a85b2f}{music\+Names}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a2e3143440b5e6099d3a92799aa2b9527}{music\+Number}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a37d972ae0b47b9099e30983131d31916}{j}}
+\item 
+Adafruit\+\_\+\+ILI9341 \mbox{\hyperlink{main_8cpp_a41c3eb6bc5901609f9f976b594e5089f}{tft}} = Adafruit\+\_\+\+ILI9341(\mbox{\hyperlink{main_8cpp_a3780e2fe762dc532df7d0f030b55caa0}{CS}}, \mbox{\hyperlink{main_8cpp_a0caba21dab832e280875be65012b30fc}{DC}})
+\item 
+int \mbox{\hyperlink{main_8cpp_a4d14c191d05b3cb1aee8e58a1eb55b84}{delay\+Buttons}} = 150
+\item 
+int \mbox{\hyperlink{main_8cpp_af14d6fe5e48ddbf9376929bf67400140}{exit\+Loop}} = 0
+\item 
+int \mbox{\hyperlink{main_8cpp_a8ed34343085ab0ca446501b9fbd3e1fd}{GLOBAL\+\_\+\+SPEED}} = 90
+\item 
+const int \mbox{\hyperlink{main_8cpp_a121b9b02b86bb834bc8eff697957982b}{GLOBAL\+\_\+\+STEPS}} = 200
+\item 
+const int \mbox{\hyperlink{main_8cpp_ad9c36b59e3b81da2ffda9ca5449ccbec}{GLOBAL\+\_\+\+TARGET}} = 30
+\item 
+int \mbox{\hyperlink{main_8cpp_adfd6c7bc482f28000a19f2e9575199a5}{button\+Up\+State}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a33578a3248bcef8ed612b1c2ca07c73b}{button\+Select\+State}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a21314675f629127b918318d0f00c2ecd}{button\+Down\+State}}
+\item 
+int $\ast$ \mbox{\hyperlink{main_8cpp_a2efeb12859b4819a40945326213f5ec4}{engine\+Pos}}
+\item 
+\mbox{\hyperlink{class_engines_set}{Engines\+Set}} \mbox{\hyperlink{main_8cpp_a68056c7996113e22c3f472cebabc790b}{guitar}}
+\item 
+\mbox{\hyperlink{class_s_d_card}{SDCard}} \mbox{\hyperlink{main_8cpp_af032f207a6f37d78677d86150296f01a}{sd\+Card}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a20b533f8bef72e33ddb371cf3c46f6ba}{target\+Screen}} = 1
+\item 
+int \mbox{\hyperlink{main_8cpp_a561d534b78fd40d3c09b9e5ae3fadf8b}{tune\+Pos}} = 0
+\item 
+int \mbox{\hyperlink{main_8cpp_af3ed0fcb2240fe611c692d66ea15ef00}{last\+Stroke}} = 0
+\item 
+string \mbox{\hyperlink{main_8cpp_ae836e73c95b4ce345b68a3c3cf4ac061}{def\+Stroke}} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{main_8cpp_ab600a6545cc9b800c55fc6e754a320b1}\label{main_8cpp_ab600a6545cc9b800c55fc6e754a320b1}} 
+\index{main.cpp@{main.cpp}!buttonDown@{buttonDown}}
+\index{buttonDown@{buttonDown}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonDown}{buttonDown}}
+{\footnotesize\ttfamily \#define button\+Down~17}
+
+\mbox{\Hypertarget{main_8cpp_a0b6eefa2fdcb63fea8d80a3d30c93524}\label{main_8cpp_a0b6eefa2fdcb63fea8d80a3d30c93524}} 
+\index{main.cpp@{main.cpp}!buttonSelect@{buttonSelect}}
+\index{buttonSelect@{buttonSelect}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonSelect}{buttonSelect}}
+{\footnotesize\ttfamily \#define button\+Select~16}
+
+\mbox{\Hypertarget{main_8cpp_a0b37bf7e800724fa443e80bcdc71ac4e}\label{main_8cpp_a0b37bf7e800724fa443e80bcdc71ac4e}} 
+\index{main.cpp@{main.cpp}!buttonUp@{buttonUp}}
+\index{buttonUp@{buttonUp}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonUp}{buttonUp}}
+{\footnotesize\ttfamily \#define button\+Up~3}
+
+\mbox{\Hypertarget{main_8cpp_a3780e2fe762dc532df7d0f030b55caa0}\label{main_8cpp_a3780e2fe762dc532df7d0f030b55caa0}} 
+\index{main.cpp@{main.cpp}!CS@{CS}}
+\index{CS@{CS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{CS}{CS}}
+{\footnotesize\ttfamily \#define CS~33}
+
+\mbox{\Hypertarget{main_8cpp_a0caba21dab832e280875be65012b30fc}\label{main_8cpp_a0caba21dab832e280875be65012b30fc}} 
+\index{main.cpp@{main.cpp}!DC@{DC}}
+\index{DC@{DC}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{DC}{DC}}
+{\footnotesize\ttfamily \#define DC~32}
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{main_8cpp_a6454f0addbd6ffb7f2337ef8e6a39df9}\label{main_8cpp_a6454f0addbd6ffb7f2337ef8e6a39df9}} 
+\index{main.cpp@{main.cpp}!adjustEngine@{adjustEngine}}
+\index{adjustEngine@{adjustEngine}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{adjustEngine()}{adjustEngine()}}
+{\footnotesize\ttfamily void adjust\+Engine (\begin{DoxyParamCaption}\item[{int $\ast$}]{reset\+Pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a046df17c8a290ef943ed1ba28270b6d8}\label{main_8cpp_a046df17c8a290ef943ed1ba28270b6d8}} 
+\index{main.cpp@{main.cpp}!afinar@{afinar}}
+\index{afinar@{afinar}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{afinar()}{afinar()}}
+{\footnotesize\ttfamily void afinar (\begin{DoxyParamCaption}\item[{int $\ast$}]{target\+Screen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a2a01e1e3e0be2b392c16355d803d86ab}\label{main_8cpp_a2a01e1e3e0be2b392c16355d803d86ab}} 
+\index{main.cpp@{main.cpp}!menu@{menu}}
+\index{menu@{menu}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily void menu (\begin{DoxyParamCaption}\item[{int $\ast$}]{target\+Screen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a8f7dd7c5a153bcd1fce6b42b4cc59e98}\label{main_8cpp_a8f7dd7c5a153bcd1fce6b42b4cc59e98}} 
+\index{main.cpp@{main.cpp}!music@{music}}
+\index{music@{music}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{music()}{music()}}
+{\footnotesize\ttfamily void music (\begin{DoxyParamCaption}\item[{int}]{music }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a4fdf34bdf61fa969661595a7fd447024}\label{main_8cpp_a4fdf34bdf61fa969661595a7fd447024}} 
+\index{main.cpp@{main.cpp}!readingButtons@{readingButtons}}
+\index{readingButtons@{readingButtons}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{readingButtons()}{readingButtons()}}
+{\footnotesize\ttfamily void reading\+Buttons (\begin{DoxyParamCaption}\item[{void $\ast$}]{parameter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_ad3d8499f38ab786c160dbf5de4b54cd7}\label{main_8cpp_ad3d8499f38ab786c160dbf5de4b54cd7}} 
+\index{main.cpp@{main.cpp}!resetEngines@{resetEngines}}
+\index{resetEngines@{resetEngines}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{resetEngines()}{resetEngines()}}
+{\footnotesize\ttfamily void reset\+Engines (\begin{DoxyParamCaption}\item[{int $\ast$}]{target\+Screen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_ac6f18a42635ed7e63d36fba413427024}\label{main_8cpp_ac6f18a42635ed7e63d36fba413427024}} 
+\index{main.cpp@{main.cpp}!settings@{settings}}
+\index{settings@{settings}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{settings()}{settings()}}
+{\footnotesize\ttfamily void settings (\begin{DoxyParamCaption}\item[{int $\ast$}]{target\+Screen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a6de041ed929a066ca2521f0880be7e93}\label{main_8cpp_a6de041ed929a066ca2521f0880be7e93}} 
+\index{main.cpp@{main.cpp}!strokes@{strokes}}
+\index{strokes@{strokes}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{strokes()}{strokes()}}
+{\footnotesize\ttfamily void strokes (\begin{DoxyParamCaption}\item[{string}]{first\+Stroke,  }\item[{string}]{second\+Stroke,  }\item[{string}]{third\+Stroke,  }\item[{int}]{n\+Strokes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a5c8d798f38126ae0214b0893e36ed3f2}\label{main_8cpp_a5c8d798f38126ae0214b0893e36ed3f2}} 
+\index{main.cpp@{main.cpp}!taskStroke@{taskStroke}}
+\index{taskStroke@{taskStroke}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{taskStroke()}{taskStroke()}}
+{\footnotesize\ttfamily void task\+Stroke (\begin{DoxyParamCaption}\item[{void $\ast$}]{parameter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_ac00af8a8534b6a149ab50b847914bce3}\label{main_8cpp_ac00af8a8534b6a149ab50b847914bce3}} 
+\index{main.cpp@{main.cpp}!taskTune@{taskTune}}
+\index{taskTune@{taskTune}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{taskTune()}{taskTune()}}
+{\footnotesize\ttfamily void task\+Tune (\begin{DoxyParamCaption}\item[{void $\ast$}]{parameter }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentação das variáveis}
+\mbox{\Hypertarget{main_8cpp_a21314675f629127b918318d0f00c2ecd}\label{main_8cpp_a21314675f629127b918318d0f00c2ecd}} 
+\index{main.cpp@{main.cpp}!buttonDownState@{buttonDownState}}
+\index{buttonDownState@{buttonDownState}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonDownState}{buttonDownState}}
+{\footnotesize\ttfamily int button\+Down\+State}
+
+\mbox{\Hypertarget{main_8cpp_a33578a3248bcef8ed612b1c2ca07c73b}\label{main_8cpp_a33578a3248bcef8ed612b1c2ca07c73b}} 
+\index{main.cpp@{main.cpp}!buttonSelectState@{buttonSelectState}}
+\index{buttonSelectState@{buttonSelectState}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonSelectState}{buttonSelectState}}
+{\footnotesize\ttfamily int button\+Select\+State}
+
+\mbox{\Hypertarget{main_8cpp_adfd6c7bc482f28000a19f2e9575199a5}\label{main_8cpp_adfd6c7bc482f28000a19f2e9575199a5}} 
+\index{main.cpp@{main.cpp}!buttonUpState@{buttonUpState}}
+\index{buttonUpState@{buttonUpState}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buttonUpState}{buttonUpState}}
+{\footnotesize\ttfamily int button\+Up\+State}
+
+\mbox{\Hypertarget{main_8cpp_ae836e73c95b4ce345b68a3c3cf4ac061}\label{main_8cpp_ae836e73c95b4ce345b68a3c3cf4ac061}} 
+\index{main.cpp@{main.cpp}!defStroke@{defStroke}}
+\index{defStroke@{defStroke}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{defStroke}{defStroke}}
+{\footnotesize\ttfamily string def\+Stroke = \char`\"{}\char`\"{}}
+
+\mbox{\Hypertarget{main_8cpp_a4d14c191d05b3cb1aee8e58a1eb55b84}\label{main_8cpp_a4d14c191d05b3cb1aee8e58a1eb55b84}} 
+\index{main.cpp@{main.cpp}!delayButtons@{delayButtons}}
+\index{delayButtons@{delayButtons}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{delayButtons}{delayButtons}}
+{\footnotesize\ttfamily int delay\+Buttons = 150}
+
+\mbox{\Hypertarget{main_8cpp_a2efeb12859b4819a40945326213f5ec4}\label{main_8cpp_a2efeb12859b4819a40945326213f5ec4}} 
+\index{main.cpp@{main.cpp}!enginePos@{enginePos}}
+\index{enginePos@{enginePos}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{enginePos}{enginePos}}
+{\footnotesize\ttfamily int$\ast$ engine\+Pos}
+
+\mbox{\Hypertarget{main_8cpp_af14d6fe5e48ddbf9376929bf67400140}\label{main_8cpp_af14d6fe5e48ddbf9376929bf67400140}} 
+\index{main.cpp@{main.cpp}!exitLoop@{exitLoop}}
+\index{exitLoop@{exitLoop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{exitLoop}{exitLoop}}
+{\footnotesize\ttfamily int exit\+Loop = 0}
+
+\mbox{\Hypertarget{main_8cpp_a8ed34343085ab0ca446501b9fbd3e1fd}\label{main_8cpp_a8ed34343085ab0ca446501b9fbd3e1fd}} 
+\index{main.cpp@{main.cpp}!GLOBAL\_SPEED@{GLOBAL\_SPEED}}
+\index{GLOBAL\_SPEED@{GLOBAL\_SPEED}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GLOBAL\_SPEED}{GLOBAL\_SPEED}}
+{\footnotesize\ttfamily int GLOBAL\+\_\+\+SPEED = 90}
+
+\mbox{\Hypertarget{main_8cpp_a121b9b02b86bb834bc8eff697957982b}\label{main_8cpp_a121b9b02b86bb834bc8eff697957982b}} 
+\index{main.cpp@{main.cpp}!GLOBAL\_STEPS@{GLOBAL\_STEPS}}
+\index{GLOBAL\_STEPS@{GLOBAL\_STEPS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GLOBAL\_STEPS}{GLOBAL\_STEPS}}
+{\footnotesize\ttfamily const int GLOBAL\+\_\+\+STEPS = 200}
+
+\mbox{\Hypertarget{main_8cpp_ad9c36b59e3b81da2ffda9ca5449ccbec}\label{main_8cpp_ad9c36b59e3b81da2ffda9ca5449ccbec}} 
+\index{main.cpp@{main.cpp}!GLOBAL\_TARGET@{GLOBAL\_TARGET}}
+\index{GLOBAL\_TARGET@{GLOBAL\_TARGET}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GLOBAL\_TARGET}{GLOBAL\_TARGET}}
+{\footnotesize\ttfamily const int GLOBAL\+\_\+\+TARGET = 30}
+
+\mbox{\Hypertarget{main_8cpp_a68056c7996113e22c3f472cebabc790b}\label{main_8cpp_a68056c7996113e22c3f472cebabc790b}} 
+\index{main.cpp@{main.cpp}!guitar@{guitar}}
+\index{guitar@{guitar}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{guitar}{guitar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_engines_set}{Engines\+Set}} guitar}
+
+\mbox{\Hypertarget{main_8cpp_a37d972ae0b47b9099e30983131d31916}\label{main_8cpp_a37d972ae0b47b9099e30983131d31916}} 
+\index{main.cpp@{main.cpp}!j@{j}}
+\index{j@{j}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily int j}
+
+\mbox{\Hypertarget{main_8cpp_af3ed0fcb2240fe611c692d66ea15ef00}\label{main_8cpp_af3ed0fcb2240fe611c692d66ea15ef00}} 
+\index{main.cpp@{main.cpp}!lastStroke@{lastStroke}}
+\index{lastStroke@{lastStroke}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lastStroke}{lastStroke}}
+{\footnotesize\ttfamily int last\+Stroke = 0}
+
+\mbox{\Hypertarget{main_8cpp_ab79e6ef1053ff4c4f58fac5849a85b2f}\label{main_8cpp_ab79e6ef1053ff4c4f58fac5849a85b2f}} 
+\index{main.cpp@{main.cpp}!musicNames@{musicNames}}
+\index{musicNames@{musicNames}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{musicNames}{musicNames}}
+{\footnotesize\ttfamily vector$<$string$>$ music\+Names}
+
+\mbox{\Hypertarget{main_8cpp_a2e3143440b5e6099d3a92799aa2b9527}\label{main_8cpp_a2e3143440b5e6099d3a92799aa2b9527}} 
+\index{main.cpp@{main.cpp}!musicNumber@{musicNumber}}
+\index{musicNumber@{musicNumber}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{musicNumber}{musicNumber}}
+{\footnotesize\ttfamily int music\+Number}
+
+\mbox{\Hypertarget{main_8cpp_af032f207a6f37d78677d86150296f01a}\label{main_8cpp_af032f207a6f37d78677d86150296f01a}} 
+\index{main.cpp@{main.cpp}!sdCard@{sdCard}}
+\index{sdCard@{sdCard}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{sdCard}{sdCard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_d_card}{SDCard}} sd\+Card}
+
+\mbox{\Hypertarget{main_8cpp_a20b533f8bef72e33ddb371cf3c46f6ba}\label{main_8cpp_a20b533f8bef72e33ddb371cf3c46f6ba}} 
+\index{main.cpp@{main.cpp}!targetScreen@{targetScreen}}
+\index{targetScreen@{targetScreen}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{targetScreen}{targetScreen}}
+{\footnotesize\ttfamily int target\+Screen = 1}
+
+\mbox{\Hypertarget{main_8cpp_af37a8be2fe16f11b0ea65a5119419e53}\label{main_8cpp_af37a8be2fe16f11b0ea65a5119419e53}} 
+\index{main.cpp@{main.cpp}!Task\_Buttons@{Task\_Buttons}}
+\index{Task\_Buttons@{Task\_Buttons}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Task\_Buttons}{Task\_Buttons}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t Task\+\_\+\+Buttons}
+
+\mbox{\Hypertarget{main_8cpp_a41c3eb6bc5901609f9f976b594e5089f}\label{main_8cpp_a41c3eb6bc5901609f9f976b594e5089f}} 
+\index{main.cpp@{main.cpp}!tft@{tft}}
+\index{tft@{tft}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{tft}{tft}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+ILI9341 tft = Adafruit\+\_\+\+ILI9341(\mbox{\hyperlink{main_8cpp_a3780e2fe762dc532df7d0f030b55caa0}{CS}}, \mbox{\hyperlink{main_8cpp_a0caba21dab832e280875be65012b30fc}{DC}})}
+
+\mbox{\Hypertarget{main_8cpp_a561d534b78fd40d3c09b9e5ae3fadf8b}\label{main_8cpp_a561d534b78fd40d3c09b9e5ae3fadf8b}} 
+\index{main.cpp@{main.cpp}!tunePos@{tunePos}}
+\index{tunePos@{tunePos}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{tunePos}{tunePos}}
+{\footnotesize\ttfamily int tune\+Pos = 0}
+

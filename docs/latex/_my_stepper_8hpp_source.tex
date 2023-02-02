@@ -1,0 +1,34 @@
+\hypertarget{_my_stepper_8hpp_source}{}\doxysection{My\+Stepper.\+hpp}
+\label{_my_stepper_8hpp_source}\index{include/MyStepper.hpp@{include/MyStepper.hpp}}
+\mbox{\hyperlink{_my_stepper_8hpp}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MYSTEPPER}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MYSTEPPER}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_my_stepper}{MyStepper}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ construtor\ do\ driver}}
+\DoxyCodeLine{00020\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{class_my_stepper}{MyStepper}}(\textcolor{keywordtype}{int}\ pRevolution,\ \textcolor{keywordtype}{int}\ pStep,\ \textcolor{keywordtype}{int}\ pDir);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ retorna\ a\ direção\ de\ rotação}}
+\DoxyCodeLine{00028\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_my_stepper_a52e87851d41ce40246755becfb1bd729}{getDir}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ atualiza\ a\ velocidade\ de\ rotação}}
+\DoxyCodeLine{00036\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_my_stepper_a3d253726c42ff5efacb4d472bd7628e3}{setSpeed}}(\textcolor{keywordtype}{int}\ pSpeedRPM);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ funcionamento\ do\ driver\ em\ cada\ passo}}
+\DoxyCodeLine{00050\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_my_stepper_a16dd163c7fe94acb9f3a10b75ef0f020}{step}}(\textcolor{keywordtype}{int}\ pSteps);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ mDIR;\ \textcolor{comment}{//\ pino\ do\ drive}}
+\DoxyCodeLine{00062\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ mSTEP;\ \textcolor{comment}{//\ pino\ do\ drive}}
+\DoxyCodeLine{00067\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ mSpeedRPM;\ \textcolor{comment}{//\ velocidade\ de\ rotação}}
+\DoxyCodeLine{00072\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ mRevolution;\ \textcolor{comment}{//\ quantidade\ de\ passos\ necessários\ para\ dar\ uma\ volta\ completa}}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

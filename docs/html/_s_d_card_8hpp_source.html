@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ViolaoMagico: Código-Fonte de include/SDCard.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ViolaoMagico<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Documentação referente ao violão mágico sendo desenvolvido pela CPE jr.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_s_d_card_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SDCard.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_s_d_card_8hpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SDCARD</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SDCARD</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;SD.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_s_d_card.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_s_d_card.html">SDCard</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_s_d_card.html#aa57f64cf28817d210706222f60be9001">SDCard</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    vector&lt;string&gt; <a class="code hl_function" href="class_s_d_card.html#a70edc6943d786fb08519ade49244c638">getList</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_d_card.html#a0a4115781fba27069d2146ab40ec38c4">Makelist</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_d_card.html#acfdd700fa4de207ddf3ac4238961a5e0">printPosition</a>(std::string pFileName);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_s_d_card.html#a166d983346773a2a57f72e57f727b3ba">readFile</a>(<span class="keywordtype">int</span> pNumFile, <span class="keywordtype">char</span> pNumStroke);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_s_d_card.html#a437d1d0ee5a0f3dbf7d76fdef586fae1">writeInFile</a>(vector&lt;int&gt; pEnginePos);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    vector&lt;string&gt; mFilesNames;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> GLOBAL_SPEED;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_s_d_card_html"><div class="ttname"><a href="class_s_d_card.html">SDCard</a></div><div class="ttdoc">A classe SDCard usada para gerenciar um objeto do tipo SD da biblioteca de SD para Arduino.</div><div class="ttdef"><b>Definition:</b> SDCard.hpp:15</div></div>
+<div class="ttc" id="aclass_s_d_card_html_a0a4115781fba27069d2146ab40ec38c4"><div class="ttname"><a href="class_s_d_card.html#a0a4115781fba27069d2146ab40ec38c4">SDCard::Makelist</a></div><div class="ttdeci">void Makelist()</div><div class="ttdoc">Preenche o vector filesNames com os nomes dos arquivos no cartão.</div><div class="ttdef"><b>Definition:</b> SDCard.cpp:34</div></div>
+<div class="ttc" id="aclass_s_d_card_html_a166d983346773a2a57f72e57f727b3ba"><div class="ttname"><a href="class_s_d_card.html#a166d983346773a2a57f72e57f727b3ba">SDCard::readFile</a></div><div class="ttdeci">string readFile(int pNumFile, char pNumStroke)</div><div class="ttdoc">Recebe como parametro a posição de uma musica no cartão e o n da batida que deverá ser retornada.</div><div class="ttdef"><b>Definition:</b> SDCard.cpp:67</div></div>
+<div class="ttc" id="aclass_s_d_card_html_a437d1d0ee5a0f3dbf7d76fdef586fae1"><div class="ttname"><a href="class_s_d_card.html#a437d1d0ee5a0f3dbf7d76fdef586fae1">SDCard::writeInFile</a></div><div class="ttdeci">void writeInFile(vector&lt; int &gt; pEnginePos)</div><div class="ttdoc">Escreve a posição dos motores no arquivo de armazenar posição.</div><div class="ttdef"><b>Definition:</b> SDCard.cpp:126</div></div>
+<div class="ttc" id="aclass_s_d_card_html_a70edc6943d786fb08519ade49244c638"><div class="ttname"><a href="class_s_d_card.html#a70edc6943d786fb08519ade49244c638">SDCard::getList</a></div><div class="ttdeci">vector&lt; string &gt; getList()</div><div class="ttdoc">Retorna o vetor com o nome de todos os arquivos no SD.</div><div class="ttdef"><b>Definition:</b> SDCard.cpp:29</div></div>
+<div class="ttc" id="aclass_s_d_card_html_aa57f64cf28817d210706222f60be9001"><div class="ttname"><a href="class_s_d_card.html#aa57f64cf28817d210706222f60be9001">SDCard::SDCard</a></div><div class="ttdeci">SDCard()</div><div class="ttdoc">Construtor padrão de um novo cartão SD.</div><div class="ttdef"><b>Definition:</b> SDCard.cpp:3</div></div>
+<div class="ttc" id="aclass_s_d_card_html_acfdd700fa4de207ddf3ac4238961a5e0"><div class="ttname"><a href="class_s_d_card.html#acfdd700fa4de207ddf3ac4238961a5e0">SDCard::printPosition</a></div><div class="ttdeci">void printPosition(std::string pFileName)</div><div class="ttdoc">Printa a posição atual dos motores.</div><div class="ttdef"><b>Definition:</b> SDCard.cpp:48</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_s_d_card_8hpp.html">SDCard.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

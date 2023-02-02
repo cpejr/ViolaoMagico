@@ -1,0 +1,46 @@
+\hypertarget{_engine_8hpp_source}{}\doxysection{Engine.\+hpp}
+\label{_engine_8hpp_source}\index{include/Engine.hpp@{include/Engine.hpp}}
+\mbox{\hyperlink{_engine_8hpp}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENGINE}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENGINE}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_my_stepper_8hpp}{MyStepper.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine}{Engine}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_my_stepper}{MyStepper}}\ *\mbox{\hyperlink{class_engine_a52392ff3cdebb4e3156235add6271af4}{stepperConstructor}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_engine}{Engine}}(\textcolor{keywordtype}{char}\ pGuitarString,\ \textcolor{keywordtype}{int}\ pStep,\ \textcolor{keywordtype}{int}\ pDir);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_engine_a3bc5058825bd35f706d2f46a17523c80}{getGuitarString}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_aa1ebdc023400cd94eb0bde3f4e067882}{getTarget}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ab533b18e82466330fb65aba1ad047c97}{reverseTarget}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a6d55a0f19d4e19dbb873dde0da47a5f7}{runToTarget}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_aa7d9f6c4d6822fbf63de2be5f6529b50}{getPosition}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{class_engine_a533c6dfa2c40c45edd87b0d3eeb5c7df}{getPosPtr}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ae71a7b6a017ea179950930810ca632c2}{oneStep}}(\textcolor{keywordtype}{int}\ signal\_);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{char}\ mGuitarString;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ mTarget;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ mPosition;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ *mPosPtr;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_SPEED;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_STEPS;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_TARGET;}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,36 @@
+\hypertarget{_s_d_card_8hpp_source}{}\doxysection{SDCard.\+hpp}
+\label{_s_d_card_8hpp_source}\index{include/SDCard.hpp@{include/SDCard.hpp}}
+\mbox{\hyperlink{_s_d_card_8hpp}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SDCARD}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SDCARD}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SD.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_s_d_card}{SDCard}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_s_d_card_aa57f64cf28817d210706222f60be9001}{SDCard}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ vector<string>\ \mbox{\hyperlink{class_s_d_card_a70edc6943d786fb08519ade49244c638}{getList}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_card_a0a4115781fba27069d2146ab40ec38c4}{Makelist}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_card_acfdd700fa4de207ddf3ac4238961a5e0}{printPosition}}(std::string\ pFileName);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_s_d_card_a166d983346773a2a57f72e57f727b3ba}{readFile}}(\textcolor{keywordtype}{int}\ pNumFile,\ \textcolor{keywordtype}{char}\ pNumStroke);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_s_d_card_a437d1d0ee5a0f3dbf7d76fdef586fae1}{writeInFile}}(vector<int>\ pEnginePos);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ vector<string>\ mFilesNames;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_SPEED;}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ViolaoMagico: Referência ao ficheiro src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ViolaoMagico<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Documentação referente ao violão mágico sendo desenvolvido pela CPE jr.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;SPI.h&gt;</code><br />
+<code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;Wire.h&gt;</code><br />
+<code>#include &lt;Adafruit_GFX.h&gt;</code><br />
+<code>#include &lt;Adafruit_SSD1306.h&gt;</code><br />
+<code>#include &lt;Adafruit_ILI9341.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_s_d_card_8hpp_source.html">SDCard.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_my_stepper_8hpp_source.html">MyStepper.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_engine_8hpp_source.html">Engine.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_engines_set_8hpp_source.html">EnginesSet.hpp</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0caba21dab832e280875be65012b30fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0caba21dab832e280875be65012b30fc">DC</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a0caba21dab832e280875be65012b30fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3780e2fe762dc532df7d0f030b55caa0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3780e2fe762dc532df7d0f030b55caa0">CS</a>&#160;&#160;&#160;33</td></tr>
+<tr class="separator:a3780e2fe762dc532df7d0f030b55caa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b37bf7e800724fa443e80bcdc71ac4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0b37bf7e800724fa443e80bcdc71ac4e">buttonUp</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a0b37bf7e800724fa443e80bcdc71ac4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b6eefa2fdcb63fea8d80a3d30c93524"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0b6eefa2fdcb63fea8d80a3d30c93524">buttonSelect</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a0b6eefa2fdcb63fea8d80a3d30c93524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab600a6545cc9b800c55fc6e754a320b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab600a6545cc9b800c55fc6e754a320b1">buttonDown</a>&#160;&#160;&#160;17</td></tr>
+<tr class="separator:ab600a6545cc9b800c55fc6e754a320b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a4fdf34bdf61fa969661595a7fd447024"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fdf34bdf61fa969661595a7fd447024">readingButtons</a> (void *parameter)</td></tr>
+<tr class="separator:a4fdf34bdf61fa969661595a7fd447024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f18a42635ed7e63d36fba413427024"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac6f18a42635ed7e63d36fba413427024">settings</a> (int *<a class="el" href="main_8cpp.html#a20b533f8bef72e33ddb371cf3c46f6ba">targetScreen</a>)</td></tr>
+<tr class="separator:ac6f18a42635ed7e63d36fba413427024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a01e1e3e0be2b392c16355d803d86ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2a01e1e3e0be2b392c16355d803d86ab">menu</a> (int *<a class="el" href="main_8cpp.html#a20b533f8bef72e33ddb371cf3c46f6ba">targetScreen</a>)</td></tr>
+<tr class="separator:a2a01e1e3e0be2b392c16355d803d86ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f7dd7c5a153bcd1fce6b42b4cc59e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8f7dd7c5a153bcd1fce6b42b4cc59e98">music</a> (int music)</td></tr>
+<tr class="separator:a8f7dd7c5a153bcd1fce6b42b4cc59e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac00af8a8534b6a149ab50b847914bce3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac00af8a8534b6a149ab50b847914bce3">taskTune</a> (void *parameter)</td></tr>
+<tr class="separator:ac00af8a8534b6a149ab50b847914bce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046df17c8a290ef943ed1ba28270b6d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a046df17c8a290ef943ed1ba28270b6d8">afinar</a> (int *<a class="el" href="main_8cpp.html#a20b533f8bef72e33ddb371cf3c46f6ba">targetScreen</a>)</td></tr>
+<tr class="separator:a046df17c8a290ef943ed1ba28270b6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d8499f38ab786c160dbf5de4b54cd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad3d8499f38ab786c160dbf5de4b54cd7">resetEngines</a> (int *<a class="el" href="main_8cpp.html#a20b533f8bef72e33ddb371cf3c46f6ba">targetScreen</a>)</td></tr>
+<tr class="separator:ad3d8499f38ab786c160dbf5de4b54cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6454f0addbd6ffb7f2337ef8e6a39df9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6454f0addbd6ffb7f2337ef8e6a39df9">adjustEngine</a> (int *resetPos)</td></tr>
+<tr class="separator:a6454f0addbd6ffb7f2337ef8e6a39df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8d798f38126ae0214b0893e36ed3f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5c8d798f38126ae0214b0893e36ed3f2">taskStroke</a> (void *parameter)</td></tr>
+<tr class="separator:a5c8d798f38126ae0214b0893e36ed3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6de041ed929a066ca2521f0880be7e93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6de041ed929a066ca2521f0880be7e93">strokes</a> (string firstStroke, string secondStroke, string thirdStroke, int nStrokes)</td></tr>
+<tr class="separator:a6de041ed929a066ca2521f0880be7e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
+<tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:af37a8be2fe16f11b0ea65a5119419e53"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af37a8be2fe16f11b0ea65a5119419e53">Task_Buttons</a></td></tr>
+<tr class="separator:af37a8be2fe16f11b0ea65a5119419e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab79e6ef1053ff4c4f58fac5849a85b2f"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab79e6ef1053ff4c4f58fac5849a85b2f">musicNames</a></td></tr>
+<tr class="separator:ab79e6ef1053ff4c4f58fac5849a85b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3143440b5e6099d3a92799aa2b9527"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2e3143440b5e6099d3a92799aa2b9527">musicNumber</a></td></tr>
+<tr class="separator:a2e3143440b5e6099d3a92799aa2b9527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d972ae0b47b9099e30983131d31916"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a37d972ae0b47b9099e30983131d31916">j</a></td></tr>
+<tr class="separator:a37d972ae0b47b9099e30983131d31916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41c3eb6bc5901609f9f976b594e5089f"><td class="memItemLeft" align="right" valign="top">Adafruit_ILI9341&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a41c3eb6bc5901609f9f976b594e5089f">tft</a> = Adafruit_ILI9341(<a class="el" href="main_8cpp.html#a3780e2fe762dc532df7d0f030b55caa0">CS</a>, <a class="el" href="main_8cpp.html#a0caba21dab832e280875be65012b30fc">DC</a>)</td></tr>
+<tr class="separator:a41c3eb6bc5901609f9f976b594e5089f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d14c191d05b3cb1aee8e58a1eb55b84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4d14c191d05b3cb1aee8e58a1eb55b84">delayButtons</a> = 150</td></tr>
+<tr class="separator:a4d14c191d05b3cb1aee8e58a1eb55b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af14d6fe5e48ddbf9376929bf67400140"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af14d6fe5e48ddbf9376929bf67400140">exitLoop</a> = 0</td></tr>
+<tr class="separator:af14d6fe5e48ddbf9376929bf67400140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed34343085ab0ca446501b9fbd3e1fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8ed34343085ab0ca446501b9fbd3e1fd">GLOBAL_SPEED</a> = 90</td></tr>
+<tr class="separator:a8ed34343085ab0ca446501b9fbd3e1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a121b9b02b86bb834bc8eff697957982b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a121b9b02b86bb834bc8eff697957982b">GLOBAL_STEPS</a> = 200</td></tr>
+<tr class="separator:a121b9b02b86bb834bc8eff697957982b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c36b59e3b81da2ffda9ca5449ccbec"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad9c36b59e3b81da2ffda9ca5449ccbec">GLOBAL_TARGET</a> = 30</td></tr>
+<tr class="separator:ad9c36b59e3b81da2ffda9ca5449ccbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd6c7bc482f28000a19f2e9575199a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adfd6c7bc482f28000a19f2e9575199a5">buttonUpState</a></td></tr>
+<tr class="separator:adfd6c7bc482f28000a19f2e9575199a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33578a3248bcef8ed612b1c2ca07c73b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a33578a3248bcef8ed612b1c2ca07c73b">buttonSelectState</a></td></tr>
+<tr class="separator:a33578a3248bcef8ed612b1c2ca07c73b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21314675f629127b918318d0f00c2ecd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a21314675f629127b918318d0f00c2ecd">buttonDownState</a></td></tr>
+<tr class="separator:a21314675f629127b918318d0f00c2ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2efeb12859b4819a40945326213f5ec4"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2efeb12859b4819a40945326213f5ec4">enginePos</a></td></tr>
+<tr class="separator:a2efeb12859b4819a40945326213f5ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68056c7996113e22c3f472cebabc790b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_engines_set.html">EnginesSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a68056c7996113e22c3f472cebabc790b">guitar</a></td></tr>
+<tr class="separator:a68056c7996113e22c3f472cebabc790b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af032f207a6f37d78677d86150296f01a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_d_card.html">SDCard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af032f207a6f37d78677d86150296f01a">sdCard</a></td></tr>
+<tr class="separator:af032f207a6f37d78677d86150296f01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b533f8bef72e33ddb371cf3c46f6ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a20b533f8bef72e33ddb371cf3c46f6ba">targetScreen</a> = 1</td></tr>
+<tr class="separator:a20b533f8bef72e33ddb371cf3c46f6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a561d534b78fd40d3c09b9e5ae3fadf8b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a561d534b78fd40d3c09b9e5ae3fadf8b">tunePos</a> = 0</td></tr>
+<tr class="separator:a561d534b78fd40d3c09b9e5ae3fadf8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ed0fcb2240fe611c692d66ea15ef00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af3ed0fcb2240fe611c692d66ea15ef00">lastStroke</a> = 0</td></tr>
+<tr class="separator:af3ed0fcb2240fe611c692d66ea15ef00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae836e73c95b4ce345b68a3c3cf4ac061"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae836e73c95b4ce345b68a3c3cf4ac061">defStroke</a> = &quot;&quot;</td></tr>
+<tr class="separator:ae836e73c95b4ce345b68a3c3cf4ac061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="ab600a6545cc9b800c55fc6e754a320b1" name="ab600a6545cc9b800c55fc6e754a320b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab600a6545cc9b800c55fc6e754a320b1">&#9670;&#160;</a></span>buttonDown</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define buttonDown&#160;&#160;&#160;17</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b6eefa2fdcb63fea8d80a3d30c93524" name="a0b6eefa2fdcb63fea8d80a3d30c93524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6eefa2fdcb63fea8d80a3d30c93524">&#9670;&#160;</a></span>buttonSelect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define buttonSelect&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b37bf7e800724fa443e80bcdc71ac4e" name="a0b37bf7e800724fa443e80bcdc71ac4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b37bf7e800724fa443e80bcdc71ac4e">&#9670;&#160;</a></span>buttonUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define buttonUp&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3780e2fe762dc532df7d0f030b55caa0" name="a3780e2fe762dc532df7d0f030b55caa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3780e2fe762dc532df7d0f030b55caa0">&#9670;&#160;</a></span>CS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CS&#160;&#160;&#160;33</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0caba21dab832e280875be65012b30fc" name="a0caba21dab832e280875be65012b30fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0caba21dab832e280875be65012b30fc">&#9670;&#160;</a></span>DC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DC&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a6454f0addbd6ffb7f2337ef8e6a39df9" name="a6454f0addbd6ffb7f2337ef8e6a39df9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6454f0addbd6ffb7f2337ef8e6a39df9">&#9670;&#160;</a></span>adjustEngine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adjustEngine </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>resetPos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a046df17c8a290ef943ed1ba28270b6d8" name="a046df17c8a290ef943ed1ba28270b6d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046df17c8a290ef943ed1ba28270b6d8">&#9670;&#160;</a></span>afinar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afinar </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>targetScreen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a01e1e3e0be2b392c16355d803d86ab" name="a2a01e1e3e0be2b392c16355d803d86ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a01e1e3e0be2b392c16355d803d86ab">&#9670;&#160;</a></span>menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menu </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>targetScreen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f7dd7c5a153bcd1fce6b42b4cc59e98" name="a8f7dd7c5a153bcd1fce6b42b4cc59e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7dd7c5a153bcd1fce6b42b4cc59e98">&#9670;&#160;</a></span>music()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void music </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>music</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fdf34bdf61fa969661595a7fd447024" name="a4fdf34bdf61fa969661595a7fd447024"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fdf34bdf61fa969661595a7fd447024">&#9670;&#160;</a></span>readingButtons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void readingButtons </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>parameter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3d8499f38ab786c160dbf5de4b54cd7" name="ad3d8499f38ab786c160dbf5de4b54cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d8499f38ab786c160dbf5de4b54cd7">&#9670;&#160;</a></span>resetEngines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetEngines </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>targetScreen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6f18a42635ed7e63d36fba413427024" name="ac6f18a42635ed7e63d36fba413427024"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f18a42635ed7e63d36fba413427024">&#9670;&#160;</a></span>settings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void settings </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>targetScreen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6de041ed929a066ca2521f0880be7e93" name="a6de041ed929a066ca2521f0880be7e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6de041ed929a066ca2521f0880be7e93">&#9670;&#160;</a></span>strokes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strokes </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>firstStroke</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>secondStroke</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>thirdStroke</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nStrokes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c8d798f38126ae0214b0893e36ed3f2" name="a5c8d798f38126ae0214b0893e36ed3f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8d798f38126ae0214b0893e36ed3f2">&#9670;&#160;</a></span>taskStroke()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void taskStroke </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>parameter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac00af8a8534b6a149ab50b847914bce3" name="ac00af8a8534b6a149ab50b847914bce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00af8a8534b6a149ab50b847914bce3">&#9670;&#160;</a></span>taskTune()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void taskTune </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>parameter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das variáveis</h2>
+<a id="a21314675f629127b918318d0f00c2ecd" name="a21314675f629127b918318d0f00c2ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21314675f629127b918318d0f00c2ecd">&#9670;&#160;</a></span>buttonDownState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int buttonDownState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33578a3248bcef8ed612b1c2ca07c73b" name="a33578a3248bcef8ed612b1c2ca07c73b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33578a3248bcef8ed612b1c2ca07c73b">&#9670;&#160;</a></span>buttonSelectState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int buttonSelectState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfd6c7bc482f28000a19f2e9575199a5" name="adfd6c7bc482f28000a19f2e9575199a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfd6c7bc482f28000a19f2e9575199a5">&#9670;&#160;</a></span>buttonUpState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int buttonUpState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae836e73c95b4ce345b68a3c3cf4ac061" name="ae836e73c95b4ce345b68a3c3cf4ac061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae836e73c95b4ce345b68a3c3cf4ac061">&#9670;&#160;</a></span>defStroke</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string defStroke = &quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d14c191d05b3cb1aee8e58a1eb55b84" name="a4d14c191d05b3cb1aee8e58a1eb55b84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d14c191d05b3cb1aee8e58a1eb55b84">&#9670;&#160;</a></span>delayButtons</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int delayButtons = 150</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2efeb12859b4819a40945326213f5ec4" name="a2efeb12859b4819a40945326213f5ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2efeb12859b4819a40945326213f5ec4">&#9670;&#160;</a></span>enginePos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* enginePos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af14d6fe5e48ddbf9376929bf67400140" name="af14d6fe5e48ddbf9376929bf67400140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af14d6fe5e48ddbf9376929bf67400140">&#9670;&#160;</a></span>exitLoop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int exitLoop = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ed34343085ab0ca446501b9fbd3e1fd" name="a8ed34343085ab0ca446501b9fbd3e1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed34343085ab0ca446501b9fbd3e1fd">&#9670;&#160;</a></span>GLOBAL_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GLOBAL_SPEED = 90</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a121b9b02b86bb834bc8eff697957982b" name="a121b9b02b86bb834bc8eff697957982b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a121b9b02b86bb834bc8eff697957982b">&#9670;&#160;</a></span>GLOBAL_STEPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GLOBAL_STEPS = 200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9c36b59e3b81da2ffda9ca5449ccbec" name="ad9c36b59e3b81da2ffda9ca5449ccbec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c36b59e3b81da2ffda9ca5449ccbec">&#9670;&#160;</a></span>GLOBAL_TARGET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GLOBAL_TARGET = 30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68056c7996113e22c3f472cebabc790b" name="a68056c7996113e22c3f472cebabc790b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68056c7996113e22c3f472cebabc790b">&#9670;&#160;</a></span>guitar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_engines_set.html">EnginesSet</a> guitar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37d972ae0b47b9099e30983131d31916" name="a37d972ae0b47b9099e30983131d31916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d972ae0b47b9099e30983131d31916">&#9670;&#160;</a></span>j</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int j</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af3ed0fcb2240fe611c692d66ea15ef00" name="af3ed0fcb2240fe611c692d66ea15ef00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ed0fcb2240fe611c692d66ea15ef00">&#9670;&#160;</a></span>lastStroke</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lastStroke = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab79e6ef1053ff4c4f58fac5849a85b2f" name="ab79e6ef1053ff4c4f58fac5849a85b2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab79e6ef1053ff4c4f58fac5849a85b2f">&#9670;&#160;</a></span>musicNames</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;string&gt; musicNames</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e3143440b5e6099d3a92799aa2b9527" name="a2e3143440b5e6099d3a92799aa2b9527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e3143440b5e6099d3a92799aa2b9527">&#9670;&#160;</a></span>musicNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int musicNumber</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af032f207a6f37d78677d86150296f01a" name="af032f207a6f37d78677d86150296f01a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af032f207a6f37d78677d86150296f01a">&#9670;&#160;</a></span>sdCard</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_d_card.html">SDCard</a> sdCard</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20b533f8bef72e33ddb371cf3c46f6ba" name="a20b533f8bef72e33ddb371cf3c46f6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20b533f8bef72e33ddb371cf3c46f6ba">&#9670;&#160;</a></span>targetScreen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int targetScreen = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af37a8be2fe16f11b0ea65a5119419e53" name="af37a8be2fe16f11b0ea65a5119419e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af37a8be2fe16f11b0ea65a5119419e53">&#9670;&#160;</a></span>Task_Buttons</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t Task_Buttons</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41c3eb6bc5901609f9f976b594e5089f" name="a41c3eb6bc5901609f9f976b594e5089f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c3eb6bc5901609f9f976b594e5089f">&#9670;&#160;</a></span>tft</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Adafruit_ILI9341 tft = Adafruit_ILI9341(<a class="el" href="main_8cpp.html#a3780e2fe762dc532df7d0f030b55caa0">CS</a>, <a class="el" href="main_8cpp.html#a0caba21dab832e280875be65012b30fc">DC</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a561d534b78fd40d3c09b9e5ae3fadf8b" name="a561d534b78fd40d3c09b9e5ae3fadf8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a561d534b78fd40d3c09b9e5ae3fadf8b">&#9670;&#160;</a></span>tunePos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tunePos = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>
