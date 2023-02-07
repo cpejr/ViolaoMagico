@@ -90,6 +90,27 @@ public:
      */
     void getEnginePos(SDCard pSd);
 
+    /**
+     * @brief configura velocidade a cada motor
+     * 
+     * @param pSd Objeto do tipo SDCard.
+     */
+    void setEngineSpeed(SDCard pSd); 
+
+    /**
+     * @brief determina o número de subdivisões de um compasso
+     * 
+     * @param pSd Objeto do tipo SDCard.
+     */
+    void setSubdivision(SDCard pSd);
+
+    /**
+     * @brief determina e retorna o delay entre um pulso e outro
+     * 
+     * @return int
+     */
+    int setDelay();
+
 private:
     /**
      * @brief  Vetor que armazena todos os motores declarados
@@ -114,6 +135,18 @@ private:
      *
      */
     int mButtonDownState;
+
+    /**
+     * @brief BPM do violão
+     * 
+     */
+    int mBPMSpeed; 
+
+    /**
+     * @brief Número de subdivisões de um compasso
+     * 
+     */
+    int mSubdivision;
 };
 
 #endif

@@ -197,3 +197,34 @@ void EnginesSet::getEnginePos(SDCard pSd)
     pSd.printPosition("/final_position.txt");
     enginePos.clear();
 }
+
+void EnginesSet::setEngineSpeed(SDCard pSd)
+{
+    mBPMSpeed = pSd.SD_SPEED; 
+    //Serial.println(mBPMSpeed);
+    for (int i = 0; i < mEngines.size(); i++)
+    {
+     mEngines[i]->Engine::setSpeed(pSd.SD_SPEED);
+    }
+
+}
+
+void EnginesSet::setSubdivision(SDCard pSd) 
+{
+    mSubdivision = pSd.SD_SUBDIVISION;
+    Serial.println("Número de subdivisões: ");
+    Serial.println(mSubdivision);
+}
+
+int EnginesSet::setDelay()
+{
+    int pDelay;
+    pDelay = (60/mBPMSpeed) * (1/mSubdivision) * 1000;
+    Serial.println("BPM: ");
+    Serial.println(mBPMSpeed);
+    Serial.println("Sub: ");
+    Serial.println(mSubdivision);
+    Serial.println("Delay: ");
+    Serial.println(pDelay);
+    return pDelay;
+}

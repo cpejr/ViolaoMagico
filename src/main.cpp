@@ -343,6 +343,12 @@ void music(int music)
   string firstStroke = sdCard.readFile(1, '1');
   string secondStroke = sdCard.readFile(1, '2');
   string thirdStroke = sdCard.readFile(1, '3');
+
+  //função do SD que seta a velocidade SDCard.SD_SPEED
+  guitar.setEngineSpeed(sdCard);
+  //função do EnginesSet que seta o número de subdivisões SD_SUBDIVISION
+  guitar.setSubdivision(sdCard);
+
   int nStrokes = 3;
   if (secondStroke.length() == 0 && thirdStroke.length() == 0)
   {

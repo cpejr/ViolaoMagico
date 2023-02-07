@@ -63,6 +63,27 @@ public:
      */
     void oneStep(int signal_);
 
+    /**
+     * @brief Utilizado para determinar o valor da velocidade
+     * 
+     * @param sdSpeed 
+     */
+    void setSpeed(int sdSpeed);
+
+    /**
+     * @brief Determina o BPM do violão
+     * 
+     * @param sdSpeed 
+     */
+    void setDelaySpeed(int sdSpeed);
+
+    /**
+     * @brief Retorna o valor do delay entre os pulsos
+     * 
+     * @return int 
+     */
+    int getDelaySpeed();
+
 private:
     /**
      * @brief Corda do motor

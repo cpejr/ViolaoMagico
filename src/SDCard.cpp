@@ -17,8 +17,9 @@ SDCard::SDCard()
 
         if (teste)
         {
-            teste.println("X150");
-            teste.println("1<AE A E AE E A AE d s >");
+            teste.println("V<60>");
+            teste.println("S<1>");
+            teste.println("1<AE  A E  DG Be  D B d s >");
             teste.close();
         }
     }
@@ -99,17 +100,40 @@ string SDCard::readFile(int pNumFile, char pNumStroke)
                             }
                         }
                     }
-                    else if (ch == 'X')
+                    else if (ch == 'V')
                     {
                         string num = "";
                         int vel;
+                        ch = textFile.read();
+                        if (ch == '<') {
                         for (int i = 0; i < 3; i++)
                         {
                             ch = textFile.read();
                             num += ch;
                         }
                         vel = stoi(num);
-                        GLOBAL_SPEED = vel;
+                        SD_SPEED = vel;
+
+                        }
+                        else if (ch == '>') {
+                        break;
+                        }
+                    }
+                    else if (ch == 'S')
+                    {
+                        string sub = "";
+                        int numSubdivision;
+                        ch = textFile.read();
+                        if (ch == '<')
+                        {
+                            for (int i = 0; ch != '>'; i++)
+                            {
+                                ch = textFile.read();
+                                sub += ch;
+                            }
+                        }
+                        numSubdivision = stoi(sub);
+                        SD_SUBDIVISION = numSubdivision;
                     }
                     else
                     {

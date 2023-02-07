@@ -61,3 +61,18 @@ void Engine::oneStep(int signal_)
     this->stepperConstructor->step(signal_ * 1);
     this->mPosition = 0;
 }
+
+void Engine::setSpeed(int sdSpeed)
+{
+    this->mSpeedRPM = sdSpeed; 
+}
+
+void Engine::setDelaySpeed(int sdSpeed)
+{
+    this->mDelaySpeed = sdSpeed; 
+}
+
+int Engine::getDelaySpeed()
+{
+    return this->mDelaySpeed;
+}

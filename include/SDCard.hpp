@@ -56,6 +56,18 @@ public:
      */
     void writeInFile(vector<int> pEnginePos);
 
+    /**
+     * @brief Variável que se refere ao BPM do violão
+     * 
+     */
+    int SD_SPEED;
+
+    /**
+     * @brief Variável que contém o número de subdivisões do compasso.
+     * 
+     */
+    int SD_SUBDIVISION;
+
 private:
     /**
      * @brief Vetor que conterá o nome dos arquivos no cartão SD.
