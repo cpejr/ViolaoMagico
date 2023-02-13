@@ -57,14 +57,14 @@ public:
     void writeInFile(vector<int> pEnginePos);
 
     /**
-     * @brief Variável que se refere ao BPM do violão
-     * 
+     * @brief BPM contido no arquivo de cada música
+     *
      */
     int SD_SPEED;
 
     /**
-     * @brief Variável que contém o número de subdivisões do compasso.
-     * 
+     * @brief Subdivisão ritmíca de cada música.
+     *
      */
     int SD_SUBDIVISION;
 
@@ -74,7 +74,6 @@ private:
      *
      */
     vector<string> mFilesNames;
-    int GLOBAL_SPEED;
 };
 
 #endif

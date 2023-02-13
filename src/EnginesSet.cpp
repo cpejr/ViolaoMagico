@@ -52,7 +52,7 @@ void EnginesSet::playMany(int pTimes = 1)
                         mExitLoop = 1;
                     }
                     engine->runToTarget();
-                    delay(3);
+                    // delay(3);
                 }
             }
         }
@@ -67,7 +67,7 @@ void EnginesSet::playMany(int pTimes = 1)
                         mExitLoop = 1;
                     }
                     engine->runToTarget();
-                    delay(3);
+                    // delay(3);
                 }
             }
         }
@@ -100,18 +100,19 @@ void EnginesSet::parseFile(std::string pStream)
             {
                 runThrough(UP);
             }
-            else
+            else if (pStream[forControl - 1] != ' ')
             {
                 for (strControl; strControl < forControl; strControl++)
                 {
                     subStream = subStream + pStream[strControl];
                 }
                 this->addToenginesToPlay(subStream);
+                Serial.println("Cordas do pulso:");
                 Serial.println(subStream.c_str());
                 this->playMany();
                 subStream = "";
             }
-            delay(500);
+            delay(setDelay());
             strControl = forControl + 1;
         }
     }
@@ -200,16 +201,15 @@ void EnginesSet::getEnginePos(SDCard pSd)
 
 void EnginesSet::setEngineSpeed(SDCard pSd)
 {
-    mBPMSpeed = pSd.SD_SPEED; 
-    //Serial.println(mBPMSpeed);
+    mBPMSpeed = pSd.SD_SPEED;
+    // Serial.println(mBPMSpeed);
     for (int i = 0; i < mEngines.size(); i++)
     {
-     mEngines[i]->Engine::setSpeed(pSd.SD_SPEED);
+        mEngines[i]->Engine::setSpeed(pSd.SD_SPEED);
     }
-
 }
 
-void EnginesSet::setSubdivision(SDCard pSd) 
+void EnginesSet::setSubdivision(SDCard pSd)
 {
     mSubdivision = pSd.SD_SUBDIVISION;
     Serial.println("Número de subdivisões: ");
@@ -219,7 +219,7 @@ void EnginesSet::setSubdivision(SDCard pSd)
 int EnginesSet::setDelay()
 {
     int pDelay;
-    pDelay = (60/mBPMSpeed) * (1/mSubdivision) * 1000;
+    pDelay = (60 / mBPMSpeed) * (1 / mSubdivision) * 1000;
     Serial.println("BPM: ");
     Serial.println(mBPMSpeed);
     Serial.println("Sub: ");

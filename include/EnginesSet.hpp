@@ -91,23 +91,24 @@ public:
     void getEnginePos(SDCard pSd);
 
     /**
-     * @brief configura velocidade a cada motor
-     * 
-     * @param pSd Objeto do tipo SDCard.
+     * @brief Define a velocidade de cada motor do set. A velocidade se encontra no arquivo .txt no cartão SD.
+     *
+     * @param pSD objeto do tipo cartão SD.
      */
-    void setEngineSpeed(SDCard pSd); 
+    void setEngineSpeed(SDCard pSd);
 
+    // determina o número de subdivisões de um compasso
     /**
-     * @brief determina o número de subdivisões de um compasso
-     * 
-     * @param pSd Objeto do tipo SDCard.
+     * @brief Determina as subdivisões ritmícas de um compasso.
+     *
+     * @param pSd objeto do tipo cartão SD.
      */
     void setSubdivision(SDCard pSd);
 
     /**
-     * @brief determina e retorna o delay entre um pulso e outro
-     * 
-     * @return int
+     * @brief Define o delay do pulso dos motores.
+     *
+     * @param pSd objeto do tipo cartão SD.
      */
     int setDelay();
 
@@ -135,16 +136,14 @@ private:
      *
      */
     int mButtonDownState;
-
     /**
-     * @brief BPM do violão
-     * 
+     * @brief Velocidade dos motores do conjunto
+     *
      */
-    int mBPMSpeed; 
-
+    int mBPMSpeed;
     /**
-     * @brief Número de subdivisões de um compasso
-     * 
+     * @brief Subdivisão ritmíca dos compassos.
+     *
      */
     int mSubdivision;
 };

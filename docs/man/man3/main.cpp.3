@@ -1,0 +1,239 @@
+.TH "src/main.cpp" 3 "Mon Feb 13 2023" "Version 0.1" "ViolaoMagico" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <SD\&.h>\fP
+.br
+\fC#include <SPI\&.h>\fP
+.br
+\fC#include <Arduino\&.h>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <Wire\&.h>\fP
+.br
+\fC#include <Adafruit_GFX\&.h>\fP
+.br
+\fC#include <Adafruit_SSD1306\&.h>\fP
+.br
+\fC#include <Adafruit_ILI9341\&.h>\fP
+.br
+\fC#include 'SDCard\&.hpp'\fP
+.br
+\fC#include 'MyStepper\&.hpp'\fP
+.br
+\fC#include 'Engine\&.hpp'\fP
+.br
+\fC#include 'EnginesSet\&.hpp'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDC\fP   32"
+.br
+.ti -1c
+.RI "#define \fBCS\fP   33"
+.br
+.ti -1c
+.RI "#define \fBbuttonUp\fP   3"
+.br
+.ti -1c
+.RI "#define \fBbuttonSelect\fP   16"
+.br
+.ti -1c
+.RI "#define \fBbuttonDown\fP   17"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadingButtons\fP (void *parameter)"
+.br
+.ti -1c
+.RI "void \fBsettings\fP (int *\fBtargetScreen\fP)"
+.br
+.ti -1c
+.RI "void \fBmenu\fP (int *\fBtargetScreen\fP)"
+.br
+.ti -1c
+.RI "void \fBmusic\fP (int music)"
+.br
+.ti -1c
+.RI "void \fBtaskTune\fP (void *parameter)"
+.br
+.ti -1c
+.RI "void \fBafinar\fP (int *\fBtargetScreen\fP)"
+.br
+.ti -1c
+.RI "void \fBresetEngines\fP (int *\fBtargetScreen\fP)"
+.br
+.ti -1c
+.RI "void \fBadjustEngine\fP (int *resetPos)"
+.br
+.ti -1c
+.RI "void \fBtaskStroke\fP (void *parameter)"
+.br
+.ti -1c
+.RI "void \fBstrokes\fP (string firstStroke, string secondStroke, string thirdStroke, int nStrokes)"
+.br
+.ti -1c
+.RI "void \fBsetup\fP ()"
+.br
+.ti -1c
+.RI "void \fBloop\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "TaskHandle_t \fBTask_Buttons\fP"
+.br
+.ti -1c
+.RI "vector< string > \fBmusicNames\fP"
+.br
+.ti -1c
+.RI "int \fBmusicNumber\fP"
+.br
+.ti -1c
+.RI "int \fBj\fP"
+.br
+.ti -1c
+.RI "Adafruit_ILI9341 \fBtft\fP = Adafruit_ILI9341(\fBCS\fP, \fBDC\fP)"
+.br
+.ti -1c
+.RI "int \fBdelayButtons\fP = 150"
+.br
+.ti -1c
+.RI "int \fBexitLoop\fP = 0"
+.br
+.ti -1c
+.RI "int \fBGLOBAL_SPEED\fP = 90"
+.br
+.ti -1c
+.RI "const int \fBGLOBAL_STEPS\fP = 200"
+.br
+.ti -1c
+.RI "const int \fBGLOBAL_TARGET\fP = 30"
+.br
+.ti -1c
+.RI "int \fBbuttonUpState\fP"
+.br
+.ti -1c
+.RI "int \fBbuttonSelectState\fP"
+.br
+.ti -1c
+.RI "int \fBbuttonDownState\fP"
+.br
+.ti -1c
+.RI "int * \fBenginePos\fP"
+.br
+.ti -1c
+.RI "\fBEnginesSet\fP \fBguitar\fP"
+.br
+.ti -1c
+.RI "\fBSDCard\fP \fBsdCard\fP"
+.br
+.ti -1c
+.RI "int \fBtargetScreen\fP = 1"
+.br
+.ti -1c
+.RI "int \fBtunePos\fP = 0"
+.br
+.ti -1c
+.RI "int \fBlastStroke\fP = 0"
+.br
+.ti -1c
+.RI "string \fBdefStroke\fP = ''"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define buttonDown   17"
+
+.SS "#define buttonSelect   16"
+
+.SS "#define buttonUp   3"
+
+.SS "#define CS   33"
+
+.SS "#define DC   32"
+
+.SH "Function Documentation"
+.PP 
+.SS "void adjustEngine (int * resetPos)"
+
+.SS "void afinar (int * targetScreen)"
+
+.SS "void loop ()"
+
+.SS "void menu (int * targetScreen)"
+
+.SS "void music (int music)"
+
+.SS "void readingButtons (void * parameter)"
+
+.SS "void resetEngines (int * targetScreen)"
+
+.SS "void settings (int * targetScreen)"
+
+.SS "void setup ()"
+
+.SS "void strokes (string firstStroke, string secondStroke, string thirdStroke, int nStrokes)"
+
+.SS "void taskStroke (void * parameter)"
+
+.SS "void taskTune (void * parameter)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "int buttonDownState"
+
+.SS "int buttonSelectState"
+
+.SS "int buttonUpState"
+
+.SS "string defStroke = ''"
+
+.SS "int delayButtons = 150"
+
+.SS "int* enginePos"
+
+.SS "int exitLoop = 0"
+
+.SS "int GLOBAL_SPEED = 90"
+
+.SS "const int GLOBAL_STEPS = 200"
+
+.SS "const int GLOBAL_TARGET = 30"
+
+.SS "\fBEnginesSet\fP guitar"
+
+.SS "int j"
+
+.SS "int lastStroke = 0"
+
+.SS "vector<string> musicNames"
+
+.SS "int musicNumber"
+
+.SS "\fBSDCard\fP sdCard"
+
+.SS "int targetScreen = 1"
+
+.SS "TaskHandle_t Task_Buttons"
+
+.SS "Adafruit_ILI9341 tft = Adafruit_ILI9341(\fBCS\fP, \fBDC\fP)"
+
+.SS "int tunePos = 0"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ViolaoMagico from the source code\&.

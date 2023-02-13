@@ -14,6 +14,7 @@ int MyStepper::getDir()
 void MyStepper::setSpeed(int pSpeedRPM)
 {
     this->mSpeedRPM = pSpeedRPM;
+    // Serial.println(this->mSpeedRPM);
 }
 
 void MyStepper::step(int pSteps)
@@ -23,16 +24,28 @@ void MyStepper::step(int pSteps)
 
     if (pSteps > 0)
     {
-        float timeMs = (pSteps / frequency) * 1000;
         digitalWrite(this->mDIR, HIGH);
-        tone(this->mSTEP, iFreq, timeMs + 1);
-        // delay(tempoMilis + 1);
+        delay(10);
+        for (int i = 0; i < pSteps; i++)
+        {
+
+            digitalWrite(this->mSTEP, LOW);
+            delay(10);
+            digitalWrite(this->mSTEP, HIGH);
+            delay(10);
+        }
     }
     if (pSteps < 0)
     {
-        float timeMs = -(pSteps / frequency) * 1000;
+
         digitalWrite(this->mDIR, LOW);
-        tone(this->mSTEP, iFreq, timeMs + 1);
-        // delay(tempoMilis + 1);
+        delay(10);
+        for (int i = 0; i > pSteps; i--)
+        {
+            digitalWrite(this->mSTEP, LOW);
+            delay(10);
+            digitalWrite(this->mSTEP, HIGH);
+            delay(10);
+        }
     }
 }

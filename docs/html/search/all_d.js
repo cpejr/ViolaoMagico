@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['sdcard_0',['SDCard',['../class_s_d_card.html',1,'SDCard'],['../class_s_d_card.html#aa57f64cf28817d210706222f60be9001',1,'SDCard::SDCard()']]],
-  ['sdcard_1',['sdCard',['../main_8cpp.html#af032f207a6f37d78677d86150296f01a',1,'main.cpp']]],
-  ['sdcard_2ecpp_2',['SDCard.cpp',['../_s_d_card_8cpp.html',1,'']]],
-  ['sdcard_2ehpp_3',['SDCard.hpp',['../_s_d_card_8hpp.html',1,'']]],
-  ['setspeed_4',['setSpeed',['../class_my_stepper.html#a3d253726c42ff5efacb4d472bd7628e3',1,'MyStepper']]],
-  ['settings_5',['settings',['../main_8cpp.html#ac6f18a42635ed7e63d36fba413427024',1,'main.cpp']]],
-  ['setup_6',['setup',['../main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'main.cpp']]],
-  ['step_7',['step',['../class_my_stepper.html#a16dd163c7fe94acb9f3a10b75ef0f020',1,'MyStepper']]],
-  ['stepperconstructor_8',['stepperConstructor',['../class_engine.html#a52392ff3cdebb4e3156235add6271af4',1,'Engine']]],
-  ['strokes_9',['strokes',['../main_8cpp.html#a6de041ed929a066ca2521f0880be7e93',1,'main.cpp']]]
+  ['sd_5fspeed_0',['SD_SPEED',['../class_s_d_card.html#ad090fd679dfcb31d03097b7566b36485',1,'SDCard']]],
+  ['sd_5fsubdivision_1',['SD_SUBDIVISION',['../class_s_d_card.html#ab6bec441dac1b45d9355eb13e799cd37',1,'SDCard']]],
+  ['sdcard_2',['SDCard',['../class_s_d_card.html',1,'SDCard'],['../class_s_d_card.html#aa57f64cf28817d210706222f60be9001',1,'SDCard::SDCard()']]],
+  ['sdcard_3',['sdCard',['../main_8cpp.html#af032f207a6f37d78677d86150296f01a',1,'main.cpp']]],
+  ['sdcard_2ecpp_4',['SDCard.cpp',['../_s_d_card_8cpp.html',1,'']]],
+  ['sdcard_2ehpp_5',['SDCard.hpp',['../_s_d_card_8hpp.html',1,'']]],
+  ['setdelay_6',['setDelay',['../class_engines_set.html#a2cdcf1b2da837ead70a876ace2810d4a',1,'EnginesSet']]],
+  ['setdelayspeed_7',['setDelaySpeed',['../class_engine.html#ac86ac78fe8b30228c7839cfc80ed7774',1,'Engine']]],
+  ['setenginespeed_8',['setEngineSpeed',['../class_engines_set.html#a7ece387b49b60d524d11847cf5db69c0',1,'EnginesSet']]],
+  ['setspeed_9',['setSpeed',['../class_engine.html#a5cf53883a652dd089aaad7a9b4a1ce0b',1,'Engine::setSpeed()'],['../class_my_stepper.html#a3d253726c42ff5efacb4d472bd7628e3',1,'MyStepper::setSpeed()']]],
+  ['setsubdivision_10',['setSubdivision',['../class_engines_set.html#a0824e10981475b5a9e3d1ccc50bf509d',1,'EnginesSet']]],
+  ['settings_11',['settings',['../main_8cpp.html#ac6f18a42635ed7e63d36fba413427024',1,'main.cpp']]],
+  ['setup_12',['setup',['../main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'main.cpp']]],
+  ['step_13',['step',['../class_my_stepper.html#a16dd163c7fe94acb9f3a10b75ef0f020',1,'MyStepper']]],
+  ['stepperconstructor_14',['stepperConstructor',['../class_engine.html#a52392ff3cdebb4e3156235add6271af4',1,'Engine']]],
+  ['strokes_15',['strokes',['../main_8cpp.html#a6de041ed929a066ca2521f0880be7e93',1,'main.cpp']]]
 ];

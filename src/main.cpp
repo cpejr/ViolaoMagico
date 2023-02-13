@@ -1,4 +1,4 @@
-// #include <SD.h>
+#include <SD.h>
 #include <SPI.h>
 #include <Arduino.h>
 #include <vector>
@@ -344,9 +344,9 @@ void music(int music)
   string secondStroke = sdCard.readFile(1, '2');
   string thirdStroke = sdCard.readFile(1, '3');
 
-  //função do SD que seta a velocidade SDCard.SD_SPEED
+  // funcao do SD que seta a velocidade SDCard.SD_SPEED
   guitar.setEngineSpeed(sdCard);
-  //função do EnginesSet que seta o número de subdivisões SD_SUBDIVISION
+  // função do EnginesSet que seta o número de subdivisões SD_SUBDIVISION
   guitar.setSubdivision(sdCard);
 
   int nStrokes = 3;

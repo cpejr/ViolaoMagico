@@ -23,12 +23,12 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"Página principal",url:"index.html"},
+{text:"Main Page",url:"index.html"},
 {text:"Classes",url:"annotated.html",children:[
-{text:"Lista de componentes",url:"annotated.html"},
-{text:"Índice dos componentes",url:"classes.html"},
-{text:"Componentes membro",url:"functions.html",children:[
-{text:"Tudo",url:"functions.html",children:[
+{text:"Class List",url:"annotated.html"},
+{text:"Class Index",url:"classes.html"},
+{text:"Class Members",url:"functions.html",children:[
+{text:"All",url:"functions.html",children:[
 {text:"a",url:"functions.html#index_a"},
 {text:"d",url:"functions.html#index_d"},
 {text:"e",url:"functions.html#index_e"},
@@ -42,14 +42,25 @@ var menudata={children:[
 {text:"t",url:"functions.html#index_t"},
 {text:"u",url:"functions.html#index_u"},
 {text:"w",url:"functions.html#index_w"}]},
-{text:"Funções",url:"functions_func.html"},
-{text:"Variáveis",url:"functions_vars.html"},
-{text:"Enumerações",url:"functions_enum.html"},
-{text:"Valores de enumerações",url:"functions_eval.html"}]}]},
-{text:"Ficheiros",url:"files.html",children:[
-{text:"Lista de ficheiros",url:"files.html"},
-{text:"Membros dos Ficheiros",url:"globals.html",children:[
-{text:"Tudo",url:"globals.html",children:[
+{text:"Functions",url:"functions_func.html",children:[
+{text:"a",url:"functions_func.html#index_a"},
+{text:"e",url:"functions_func.html#index_e"},
+{text:"g",url:"functions_func.html#index_g"},
+{text:"i",url:"functions_func.html#index_i"},
+{text:"m",url:"functions_func.html#index_m"},
+{text:"o",url:"functions_func.html#index_o"},
+{text:"p",url:"functions_func.html#index_p"},
+{text:"r",url:"functions_func.html#index_r"},
+{text:"s",url:"functions_func.html#index_s"},
+{text:"t",url:"functions_func.html#index_t"},
+{text:"w",url:"functions_func.html#index_w"}]},
+{text:"Variables",url:"functions_vars.html"},
+{text:"Enumerations",url:"functions_enum.html"},
+{text:"Enumerator",url:"functions_eval.html"}]}]},
+{text:"Files",url:"files.html",children:[
+{text:"File List",url:"files.html"},
+{text:"File Members",url:"globals.html",children:[
+{text:"All",url:"globals.html",children:[
 {text:"a",url:"globals.html#index_a"},
 {text:"b",url:"globals.html#index_b"},
 {text:"c",url:"globals.html#index_c"},
@@ -62,6 +73,6 @@ var menudata={children:[
 {text:"r",url:"globals.html#index_r"},
 {text:"s",url:"globals.html#index_s"},
 {text:"t",url:"globals.html#index_t"}]},
-{text:"Funções",url:"globals_func.html"},
-{text:"Variáveis",url:"globals_vars.html"},
+{text:"Functions",url:"globals_func.html"},
+{text:"Variables",url:"globals_vars.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

@@ -1,0 +1,221 @@
+.TH "EnginesSet" 3 "Mon Feb 13 2023" "Version 0.1" "ViolaoMagico" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EnginesSet \- A classe \fBEnginesSet\fP corresponde a um conjunto de motores\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EnginesSet\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBmDirection\fP { \fBUP\fP = 0, \fBDOWN\fP = 1 }"
+.br
+.RI "Enum para direções de subida/descida\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEnginesSet\fP ()"
+.br
+.RI "Construtor padrao que apenas inicializa a classe\&. "
+.ti -1c
+.RI "void \fBinsertMotor\fP (char pGuitarString, int pStep, int pDir)"
+.br
+.RI "Função responsável por inserir um motor no vetor engines\&. "
+.ti -1c
+.RI "void \fBaddToenginesToPlay\fP (std::string pGuitarString)"
+.br
+.RI "Função responsável para adicionar quais motores serão tocados no vetor enginestoplay a cada batida\&. "
+.ti -1c
+.RI "void \fBplayMany\fP (int pTimes)"
+.br
+.RI "Função responsável por tocar cada corda de acordo com os que estao no vetor enginestoplay\&. "
+.ti -1c
+.RI "void \fBparseFile\fP (std::string pStream)"
+.br
+.RI "Funçao responsável por ler um arquivo de texto\&. "
+.ti -1c
+.RI "void \fBrunThrough\fP (\fBmDirection\fP pDirection)"
+.br
+.RI "Percorre as cordas do violão fazendo uma descida ou subida\&. "
+.ti -1c
+.RI "void \fBtune\fP (int pTunePosition)"
+.br
+.RI "Recebe um número inteiro que corresponde a uma corda e por meio de um switch case chama a função parseFile para tocar a corda desejada\&. Usada para afinar o violão\&. "
+.ti -1c
+.RI "void \fBplayOneStep\fP (int pGuitarReset, int pSignal)"
+.br
+.RI "Reseta o motor selecionado\&. "
+.ti -1c
+.RI "void \fBgetEnginePos\fP (\fBSDCard\fP pSd)"
+.br
+.RI "Essa função registra a posição atual de cada motor e escreve esse valor de posição em um arquivo de texto\&. "
+.ti -1c
+.RI "void \fBsetEngineSpeed\fP (\fBSDCard\fP pSd)"
+.br
+.RI "Define a velocidade de cada motor do set\&. A velocidade se encontra no arquivo \&.txt no cartão SD\&. "
+.ti -1c
+.RI "void \fBsetSubdivision\fP (\fBSDCard\fP pSd)"
+.br
+.RI "Determina as subdivisões ritmícas de um compasso\&. "
+.ti -1c
+.RI "int \fBsetDelay\fP ()"
+.br
+.RI "Define o delay do pulso dos motores\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A classe \fBEnginesSet\fP corresponde a um conjunto de motores\&. 
+
+EngineSet armazena e gerencia o funcionamento de todos os motores do violão\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBEnginesSet::mDirection\fP"
+
+.PP
+Enum para direções de subida/descida\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUP \fP\fP
+.TP
+\fB\fIDOWN \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EnginesSet::EnginesSet ()"
+
+.PP
+Construtor padrao que apenas inicializa a classe\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void EnginesSet::addToenginesToPlay (std::string pGuitarString)"
+
+.PP
+Função responsável para adicionar quais motores serão tocados no vetor enginestoplay a cada batida\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpGuitarString\fP Qual cordas serao tocadas 
+.RE
+.PP
+
+.SS "void EnginesSet::getEnginePos (\fBSDCard\fP pSd)"
+
+.PP
+Essa função registra a posição atual de cada motor e escreve esse valor de posição em um arquivo de texto\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpSd\fP Objeto do tipo \fBSDCard\fP\&. 
+.RE
+.PP
+
+.SS "void EnginesSet::insertMotor (char pGuitarString, int pStep, int pDir)"
+
+.PP
+Função responsável por inserir um motor no vetor engines\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpGuitarString\fP Corda que o motor é responsável 
+.br
+\fIpStep\fP Pinos do motor 
+.br
+\fIpDir\fP Pinos do motor 
+.RE
+.PP
+
+.SS "void EnginesSet::parseFile (std::string pStream)"
+
+.PP
+Funçao responsável por ler um arquivo de texto\&. 
+.SS "void EnginesSet::playMany (int pTimes = \fC1\fP)"
+
+.PP
+Função responsável por tocar cada corda de acordo com os que estao no vetor enginestoplay\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpTimes\fP Quantas vezes a funcao vai ser chamada para tocar os motores 
+.RE
+.PP
+
+.SS "void EnginesSet::playOneStep (int pGuitarReset, int pSignal)"
+
+.PP
+Reseta o motor selecionado\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpGuitarReset\fP Referencia qual motor deve ser reiniciada 
+.br
+\fIpSignal\fP Indica se o motor deve girar no sentido horário ou anti horário\&. 
+.RE
+.PP
+
+.SS "void EnginesSet::runThrough (\fBmDirection\fP pDirection)"
+
+.PP
+Percorre as cordas do violão fazendo uma descida ou subida\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirection\fP direção a percorrer (para cima ou para baixo) 
+.RE
+.PP
+
+.SS "int EnginesSet::setDelay ()"
+
+.PP
+Define o delay do pulso dos motores\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpSd\fP objeto do tipo cartão SD\&. 
+.RE
+.PP
+
+.SS "void EnginesSet::setEngineSpeed (\fBSDCard\fP pSd)"
+
+.PP
+Define a velocidade de cada motor do set\&. A velocidade se encontra no arquivo \&.txt no cartão SD\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpSD\fP objeto do tipo cartão SD\&. 
+.RE
+.PP
+
+.SS "void EnginesSet::setSubdivision (\fBSDCard\fP pSd)"
+
+.PP
+Determina as subdivisões ritmícas de um compasso\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpSd\fP objeto do tipo cartão SD\&. 
+.RE
+.PP
+
+.SS "void EnginesSet::tune (int pTunePosition)"
+
+.PP
+Recebe um número inteiro que corresponde a uma corda e por meio de um switch case chama a função parseFile para tocar a corda desejada\&. Usada para afinar o violão\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpTunePosition\fP Identifica qual corda deve ser afinada\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ViolaoMagico from the source code\&.

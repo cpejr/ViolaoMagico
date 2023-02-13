@@ -2,7 +2,7 @@
 
 SDCard::SDCard()
 {
-    GLOBAL_SPEED = 90;
+    // SD_SPEED = 90;
     SD.begin(5);
 
     if (!SD.exists("musicas"))
@@ -52,10 +52,10 @@ void SDCard::printPosition(std::string pFileName)
     File textFile = SD.open(c);
     if (textFile)
     {
-        Serial.print("Conteudo do arquivo de posição: \n");
+        // Serial.print("Conteudo do arquivo de posição: \n");
         while (textFile.available())
         {
-            Serial.write(textFile.read());
+            // Serial.write(textFile.read());
         }
         textFile.close();
     }
@@ -105,18 +105,19 @@ string SDCard::readFile(int pNumFile, char pNumStroke)
                         string num = "";
                         int vel;
                         ch = textFile.read();
-                        if (ch == '<') {
-                        for (int i = 0; i < 3; i++)
+                        if (ch == '<')
                         {
-                            ch = textFile.read();
-                            num += ch;
+                            for (int i = 0; i < 3; i++)
+                            {
+                                ch = textFile.read();
+                                num += ch;
+                            }
+                            vel = stoi(num);
+                            SD_SPEED = vel;
                         }
-                        vel = stoi(num);
-                        SD_SPEED = vel;
-
-                        }
-                        else if (ch == '>') {
-                        break;
+                        else if (ch == '>')
+                        {
+                            break;
                         }
                     }
                     else if (ch == 'S')
@@ -156,7 +157,7 @@ void SDCard::writeInFile(vector<int> pEnginePos)
 
     if (textFile)
     {
-        Serial.print("\n Gravando a posição dos motores... \n");
+        // Serial.print("\n Gravando a posição dos motores... \n");
         for (auto &i : pEnginePos)
         {
             textFile.println(i);

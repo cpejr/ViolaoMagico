@@ -1,0 +1,93 @@
+.TH "MyStepper" 3 "Mon Feb 13 2023" "Version 0.1" "ViolaoMagico" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MyStepper \- A classe \fBMyStepper\fP é utilizada para controlar os motores de passo\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MyStepper\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMyStepper\fP (int pRevolution, int pStep, int pDir)"
+.br
+.RI "Construtor do objeto \fBMyStepper\fP\&. "
+.ti -1c
+.RI "int \fBgetDir\fP ()"
+.br
+.RI "Retorna a direção de rotação do motor\&. "
+.ti -1c
+.RI "void \fBsetSpeed\fP (int pSpeedRPM)"
+.br
+.RI "Atualiza a velocidade de rotação do motor\&. "
+.ti -1c
+.RI "void \fBstep\fP (int pSteps)"
+.br
+.RI "Faz o motor girar em um número especifico de passos\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A classe \fBMyStepper\fP é utilizada para controlar os motores de passo\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MyStepper::MyStepper (int pRevolution, int pStep, int pDir)"
+
+.PP
+Construtor do objeto \fBMyStepper\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpRevolution\fP int que representa a quantidade de passos necessários para o motor dar uma volta completa\&. 
+.br
+\fIpStep\fP Pino do driver\&. 
+.br
+\fIpDir\fP Pino do driver\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int MyStepper::getDir ()"
+
+.PP
+Retorna a direção de rotação do motor\&. 
+.PP
+\fBReturns\fP
+.RS 4
+int que representa a direção do motor 
+.RE
+.PP
+
+.SS "void MyStepper::setSpeed (int pSpeedRPM)"
+
+.PP
+Atualiza a velocidade de rotação do motor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpSpeedRPM\fP int que representa a nova velocidade 
+.RE
+.PP
+
+.SS "void MyStepper::step (int pSteps)"
+
+.PP
+Faz o motor girar em um número especifico de passos\&. 
+.IP "\(bu" 2
+\fCdigitalWrite()\fP recebe como parâmetros o pino e seu valor (\fBHIGH\fP ou \fBLOW\fP), sendo que HIGH irá aumentar a tensão no pino e LOW irá diminuir a tensão\&. Primeiro é feito um cálculo para determinar a frequência do motor\&. Depois é verificado se pSteps é positivo ou negativo para saber para qual lado o motor irá girar\&. Caso seja positivo, a tensão é aumentada no pino de direção através da função \fCdigitalWrite()\fP e caso seja negativo, a tensão é diminuída\&. Depois a mesma função é utilizada aumentando e diminuindo a tensão no pino de passos, fazendo o motor girar\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIpSteps\fP int que representa a quantidade de passos que o motor irá dar, podendo ser positivo ou negativo\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ViolaoMagico from the source code\&.

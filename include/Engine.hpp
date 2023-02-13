@@ -61,26 +61,25 @@ public:
      *
      * @param signal_ to be explained
      */
-    void oneStep(int signal_);
+    void oneStep(int pSignal_);
 
     /**
-     * @brief Utilizado para determinar o valor da velocidade
-     * 
-     * @param sdSpeed 
+     * @brief Define a velocidade do motor. A velocidade se encontra no arquivo .txt no cartão SD.
+     *
+     * @param pSdSpeed int que representa a velocidade em BPM que o motor deve assumir
      */
-    void setSpeed(int sdSpeed);
+    void setSpeed(int pSdSpeed);
 
     /**
-     * @brief Determina o BPM do violão
-     * 
-     * @param sdSpeed 
+     * @brief Define o delay dos motores. O delay se encontra no arquivo .txt no cartão SD.
+     *
+     * @param pSdSpeed
      */
-    void setDelaySpeed(int sdSpeed);
+    void setDelaySpeed(int pSdSpeed);
 
     /**
-     * @brief Retorna o valor do delay entre os pulsos
-     * 
-     * @return int 
+     * @brief Retorna o delay do motor
+     * @return int com valor de delay do motor
      */
     int getDelaySpeed();
 
@@ -104,6 +103,8 @@ private:
      * @brief  Ponteiro de posição do motor
      */
     int *mPosPtr;
+    int mSpeedRPM;
+    int mDelaySpeed;
     int GLOBAL_SPEED;
     int GLOBAL_STEPS;
     int GLOBAL_TARGET;

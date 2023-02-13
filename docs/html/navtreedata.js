@@ -26,22 +26,22 @@ var NAVTREE =
 [
   [ "ViolaoMagico", "index.html", [
     [ "Classes", "annotated.html", [
-      [ "Lista de componentes", "annotated.html", "annotated_dup" ],
-      [ "Índice dos componentes", "classes.html", null ],
-      [ "Componentes membro", "functions.html", [
-        [ "Tudo", "functions.html", null ],
-        [ "Funções", "functions_func.html", null ],
-        [ "Variáveis", "functions_vars.html", null ],
-        [ "Enumerações", "functions_enum.html", null ],
-        [ "Valores de enumerações", "functions_eval.html", null ]
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
-    [ "Ficheiros", "files.html", [
-      [ "Lista de ficheiros", "files.html", "files_dup" ],
-      [ "Membros dos Ficheiros", "globals.html", [
-        [ "Tudo", "globals.html", null ],
-        [ "Funções", "globals_func.html", null ],
-        [ "Variáveis", "globals_vars.html", null ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -53,5 +53,5 @@ var NAVTREEINDEX =
 "_engine_8cpp.html"
 ];
 
-var SYNCONMSG = 'clique para desativar a sincronização do painel';
-var SYNCOFFMSG = 'clique para ativar a sincronização do painel';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';

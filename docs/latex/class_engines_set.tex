@@ -1,4 +1,4 @@
-\hypertarget{class_engines_set}{}\doxysection{Referência à classe Engines\+Set}
+\hypertarget{class_engines_set}{}\doxysection{Engines\+Set Class Reference}
 \label{class_engines_set}\index{EnginesSet@{EnginesSet}}
 
 
@@ -9,14 +9,14 @@ A classe \mbox{\hyperlink{class_engines_set}{Engines\+Set}} corresponde a um con
 
 {\ttfamily \#include $<$Engines\+Set.\+hpp$>$}
 
-\doxysubsection*{Tipos Públicos}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{class_engines_set_a36bb08d7560c5541a7e6c3c793b95f37}{m\+Direction}} \{ \mbox{\hyperlink{class_engines_set_a36bb08d7560c5541a7e6c3c793b95f37aae12a5502269e96f560716d736ea6bf4}{UP}} = 0
 , \mbox{\hyperlink{class_engines_set_a36bb08d7560c5541a7e6c3c793b95f37a90d035cc401944dc286e872d7ca865b4}{DOWN}} = 1
  \}
 \begin{DoxyCompactList}\small\item\em Enum para direções de subida/descida. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Membros públicos}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_engines_set_aee4a77e03dc1ba298739e0d85cc9e7d7}{Engines\+Set}} ()
@@ -36,15 +36,21 @@ void \mbox{\hyperlink{class_engines_set_ac20358fa7f83677942a411a13263f816}{tune}
 void \mbox{\hyperlink{class_engines_set_a26092929ae56254eeaa4603e5d23e2ed}{play\+One\+Step}} (int p\+Guitar\+Reset, int p\+Signal)
 \begin{DoxyCompactList}\small\item\em Reseta o motor selecionado. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_engines_set_ac866d9ac56479ad135c4bb6882032b0d}{get\+Engine\+Pos}} (\mbox{\hyperlink{class_s_d_card}{SDCard}} p\+Sd)
-\begin{DoxyCompactList}\small\item\em Essa função registra a posição atual de cada motor e escreve esse valor de posição em um arquivo de texto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Essa função registra a posição atual de cada motor e escreve esse valor de posição em um arquivo de texto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engines_set_a7ece387b49b60d524d11847cf5db69c0}{set\+Engine\+Speed}} (\mbox{\hyperlink{class_s_d_card}{SDCard}} p\+Sd)
+\begin{DoxyCompactList}\small\item\em Define a velocidade de cada motor do set. A velocidade se encontra no arquivo .txt no cartão SD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engines_set_a0824e10981475b5a9e3d1ccc50bf509d}{set\+Subdivision}} (\mbox{\hyperlink{class_s_d_card}{SDCard}} p\+Sd)
+\begin{DoxyCompactList}\small\item\em Determina as subdivisões ritmícas de um compasso. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_engines_set_a2cdcf1b2da837ead70a876ace2810d4a}{set\+Delay}} ()
+\begin{DoxyCompactList}\small\item\em Define o delay do pulso dos motores. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Descrição detalhada}
+\doxysubsection{Detailed Description}
 A classe \mbox{\hyperlink{class_engines_set}{Engines\+Set}} corresponde a um conjunto de motores. 
 
 Engine\+Set armazena e gerencia o funcionamento de todos os motores do violão. 
 
-\doxysubsection{Documentação das enumerações}
+\doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_engines_set_a36bb08d7560c5541a7e6c3c793b95f37}\label{class_engines_set_a36bb08d7560c5541a7e6c3c793b95f37}} 
 \index{EnginesSet@{EnginesSet}!mDirection@{mDirection}}
 \index{mDirection@{mDirection}!EnginesSet@{EnginesSet}}
@@ -55,7 +61,7 @@ Engine\+Set armazena e gerencia o funcionamento de todos os motores do violão.
 
 Enum para direções de subida/descida. 
 
-\begin{DoxyEnumFields}{Valores de enumerações}
+\begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!EnginesSet@{EnginesSet}}\index{EnginesSet@{EnginesSet}!UP@{UP}}}\mbox{\Hypertarget{class_engines_set_a36bb08d7560c5541a7e6c3c793b95f37aae12a5502269e96f560716d736ea6bf4}\label{class_engines_set_a36bb08d7560c5541a7e6c3c793b95f37aae12a5502269e96f560716d736ea6bf4}} 
 UP&\\
 \hline
@@ -67,7 +73,7 @@ DOWN&\\
 \end{DoxyEnumFields}
 
 
-\doxysubsection{Documentação dos Construtores \& Destrutor}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_engines_set_aee4a77e03dc1ba298739e0d85cc9e7d7}\label{class_engines_set_aee4a77e03dc1ba298739e0d85cc9e7d7}} 
 \index{EnginesSet@{EnginesSet}!EnginesSet@{EnginesSet}}
 \index{EnginesSet@{EnginesSet}!EnginesSet@{EnginesSet}}
@@ -80,7 +86,7 @@ Construtor padrao que apenas inicializa a classe.
 
 
 
-\doxysubsection{Documentação das funções}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_engines_set_aadc5bc1c22dd1793b3c43735b0349fdd}\label{class_engines_set_aadc5bc1c22dd1793b3c43735b0349fdd}} 
 \index{EnginesSet@{EnginesSet}!addToenginesToPlay@{addToenginesToPlay}}
 \index{addToenginesToPlay@{addToenginesToPlay}!EnginesSet@{EnginesSet}}
@@ -92,7 +98,7 @@ Construtor padrao que apenas inicializa a classe.
 Função responsável para adicionar quais motores serão tocados no vetor enginestoplay a cada batida. 
 
 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em p\+Guitar\+String} & Qual cordas serao tocadas \\
 \hline
 \end{DoxyParams}
@@ -107,7 +113,7 @@ Função responsável para adicionar quais motores serão tocados no vetor engin
 Essa função registra a posição atual de cada motor e escreve esse valor de posição em um arquivo de texto. 
 
 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em p\+Sd} & Objeto do tipo \mbox{\hyperlink{class_s_d_card}{SDCard}}. \\
 \hline
 \end{DoxyParams}
@@ -122,7 +128,7 @@ Essa função registra a posição atual de cada motor e escreve esse valor de p
 Função responsável por inserir um motor no vetor engines. 
 
 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em p\+Guitar\+String} & Corda que o motor é responsável \\
 \hline
 {\em p\+Step} & Pinos do motor \\
@@ -151,7 +157,7 @@ Funçao responsável por ler um arquivo de texto.
 Função responsável por tocar cada corda de acordo com os que estao no vetor enginestoplay. 
 
 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em p\+Times} & Quantas vezes a funcao vai ser chamada para tocar os motores \\
 \hline
 \end{DoxyParams}
@@ -166,7 +172,7 @@ Função responsável por tocar cada corda de acordo com os que estao no vetor e
 Reseta o motor selecionado. 
 
 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em p\+Guitar\+Reset} & Referencia qual motor deve ser reiniciada \\
 \hline
 {\em p\+Signal} & Indica se o motor deve girar no sentido horário ou anti horário. \\
@@ -183,8 +189,53 @@ Reseta o motor selecionado.
 Percorre as cordas do violão fazendo uma descida ou subida. 
 
 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em direction} & direção a percorrer (para cima ou para baixo) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engines_set_a2cdcf1b2da837ead70a876ace2810d4a}\label{class_engines_set_a2cdcf1b2da837ead70a876ace2810d4a}} 
+\index{EnginesSet@{EnginesSet}!setDelay@{setDelay}}
+\index{setDelay@{setDelay}!EnginesSet@{EnginesSet}}
+\doxysubsubsection{\texorpdfstring{setDelay()}{setDelay()}}
+{\footnotesize\ttfamily int Engines\+Set\+::set\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Define o delay do pulso dos motores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Sd} & objeto do tipo cartão SD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engines_set_a7ece387b49b60d524d11847cf5db69c0}\label{class_engines_set_a7ece387b49b60d524d11847cf5db69c0}} 
+\index{EnginesSet@{EnginesSet}!setEngineSpeed@{setEngineSpeed}}
+\index{setEngineSpeed@{setEngineSpeed}!EnginesSet@{EnginesSet}}
+\doxysubsubsection{\texorpdfstring{setEngineSpeed()}{setEngineSpeed()}}
+{\footnotesize\ttfamily void Engines\+Set\+::set\+Engine\+Speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_card}{SDCard}}}]{p\+Sd }\end{DoxyParamCaption})}
+
+
+
+Define a velocidade de cada motor do set. A velocidade se encontra no arquivo .txt no cartão SD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+SD} & objeto do tipo cartão SD. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engines_set_a0824e10981475b5a9e3d1ccc50bf509d}\label{class_engines_set_a0824e10981475b5a9e3d1ccc50bf509d}} 
+\index{EnginesSet@{EnginesSet}!setSubdivision@{setSubdivision}}
+\index{setSubdivision@{setSubdivision}!EnginesSet@{EnginesSet}}
+\doxysubsubsection{\texorpdfstring{setSubdivision()}{setSubdivision()}}
+{\footnotesize\ttfamily void Engines\+Set\+::set\+Subdivision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_d_card}{SDCard}}}]{p\+Sd }\end{DoxyParamCaption})}
+
+
+
+Determina as subdivisões ritmícas de um compasso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Sd} & objeto do tipo cartão SD. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_engines_set_ac20358fa7f83677942a411a13263f816}\label{class_engines_set_ac20358fa7f83677942a411a13263f816}} 
@@ -198,13 +249,13 @@ Percorre as cordas do violão fazendo uma descida ou subida.
 Recebe um número inteiro que corresponde a uma corda e por meio de um switch case chama a função parse\+File para tocar a corda desejada. Usada para afinar o violão. 
 
 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em p\+Tune\+Position} & Identifica qual corda deve ser afinada. \\
 \hline
 \end{DoxyParams}
 
 
-A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 include/\mbox{\hyperlink{_engines_set_8hpp}{Engines\+Set.\+hpp}}\item 
 src/\mbox{\hyperlink{_engines_set_8cpp}{Engines\+Set.\+cpp}}\end{DoxyCompactItemize}

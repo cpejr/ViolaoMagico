@@ -1,0 +1,167 @@
+.TH "Engine" 3 "Mon Feb 13 2023" "Version 0.1" "ViolaoMagico" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Engine \- A classe \fBEngine\fP corresponde a único um motor\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Engine\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEngine\fP (char pGuitarString, int pStep, int pDir)"
+.br
+.RI "Construtor do motor\&. "
+.ti -1c
+.RI "char \fBgetGuitarString\fP ()"
+.br
+.RI "Getter que retorna a corda do violão que o motor é responsável\&. "
+.ti -1c
+.RI "int \fBgetTarget\fP ()"
+.br
+.RI "Getter que retorna os passos que o motor precisa andar para tocar uma corda\&. "
+.ti -1c
+.RI "void \fBreverseTarget\fP ()"
+.br
+.RI "Função que coloca reverte o target, para o motor fazer o movimento de subida e descida na corda\&. "
+.ti -1c
+.RI "void \fBrunToTarget\fP ()"
+.br
+.RI "Função que faz o motor fazer o movimento até o alvo de passos\&. "
+.ti -1c
+.RI "int \fBgetPosition\fP ()"
+.br
+.RI "Getter que retorna a posição do motor\&. "
+.ti -1c
+.RI "int * \fBgetPosPtr\fP ()"
+.br
+.RI "Getter que retorna o ponteiro referente a posição do motor\&. "
+.ti -1c
+.RI "void \fBoneStep\fP (int pSignal_)"
+.br
+.RI "Faz com que o motor ande um passo\&. "
+.ti -1c
+.RI "void \fBsetSpeed\fP (int pSdSpeed)"
+.br
+.RI "Define a velocidade do motor\&. A velocidade se encontra no arquivo \&.txt no cartão SD\&. "
+.ti -1c
+.RI "void \fBsetDelaySpeed\fP (int pSdSpeed)"
+.br
+.RI "Define o delay dos motores\&. O delay se encontra no arquivo \&.txt no cartão SD\&. "
+.ti -1c
+.RI "int \fBgetDelaySpeed\fP ()"
+.br
+.RI "Retorna o delay do motor\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMyStepper\fP * \fBstepperConstructor\fP"
+.br
+.RI "Ponteiro de acesso direto às funções do objeto Stepper\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A classe \fBEngine\fP corresponde a único um motor\&. 
+
+Os atributos do motor são o seu identificador (mGuitarString) , a sua posição (mPosition) e o seu alvo (mTarget)\&. Em um motor de passo, é interessante salvar a posição atual do motor tendo em vista que ele próprio não consegue fazer isso quando ligado\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Engine::Engine (char pGuitarString, int pStep, int pDir)"
+
+.PP
+Construtor do motor\&. Inicializa as variaveis privadas referentes aos pinos dos motores e a corda do violão\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpGuitarString\fP Corda do violão 
+.br
+\fIpStep,pDir\fP pinos do motor 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int Engine::getDelaySpeed ()"
+
+.PP
+Retorna o delay do motor\&. 
+.PP
+\fBReturns\fP
+.RS 4
+int com valor de delay do motor 
+.RE
+.PP
+
+.SS "char Engine::getGuitarString ()"
+
+.PP
+Getter que retorna a corda do violão que o motor é responsável\&. 
+.SS "int Engine::getPosition ()"
+
+.PP
+Getter que retorna a posição do motor\&. 
+.SS "int * Engine::getPosPtr ()"
+
+.PP
+Getter que retorna o ponteiro referente a posição do motor\&. 
+.SS "int Engine::getTarget ()"
+
+.PP
+Getter que retorna os passos que o motor precisa andar para tocar uma corda\&. 
+.SS "void Engine::oneStep (int pSignal_)"
+
+.PP
+Faz com que o motor ande um passo\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsignal_\fP to be explained 
+.RE
+.PP
+
+.SS "void Engine::reverseTarget ()"
+
+.PP
+Função que coloca reverte o target, para o motor fazer o movimento de subida e descida na corda\&. 
+.SS "void Engine::runToTarget ()"
+
+.PP
+Função que faz o motor fazer o movimento até o alvo de passos\&. 
+.SS "void Engine::setDelaySpeed (int pSdSpeed)"
+
+.PP
+Define o delay dos motores\&. O delay se encontra no arquivo \&.txt no cartão SD\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpSdSpeed\fP 
+.RE
+.PP
+
+.SS "void Engine::setSpeed (int pSdSpeed)"
+
+.PP
+Define a velocidade do motor\&. A velocidade se encontra no arquivo \&.txt no cartão SD\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpSdSpeed\fP int que representa a velocidade em BPM que o motor deve assumir 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBMyStepper\fP* Engine::stepperConstructor"
+
+.PP
+Ponteiro de acesso direto às funções do objeto Stepper\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ViolaoMagico from the source code\&.

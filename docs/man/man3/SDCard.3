@@ -1,0 +1,133 @@
+.TH "SDCard" 3 "Mon Feb 13 2023" "Version 0.1" "ViolaoMagico" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDCard \- A classe \fBSDCard\fP usada para gerenciar um objeto do tipo SD da biblioteca de SD para Arduino\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDCard\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSDCard\fP ()"
+.br
+.RI "Construtor padrão de um novo cartão SD\&. "
+.ti -1c
+.RI "vector< string > \fBgetList\fP ()"
+.br
+.RI "Retorna o vetor com o nome de todos os arquivos no SD\&. "
+.ti -1c
+.RI "void \fBMakelist\fP ()"
+.br
+.RI "Preenche o vector filesNames com os nomes dos arquivos no cartão\&. "
+.ti -1c
+.RI "void \fBprintPosition\fP (std::string pFileName)"
+.br
+.RI "Printa a posição atual dos motores\&. "
+.ti -1c
+.RI "string \fBreadFile\fP (int pNumFile, char pNumStroke)"
+.br
+.RI "Recebe como parametro a posição de uma musica no cartão e o n da batida que deverá ser retornada\&. "
+.ti -1c
+.RI "void \fBwriteInFile\fP (vector< int > pEnginePos)"
+.br
+.RI "Escreve a posição dos motores no arquivo de armazenar posição\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBSD_SPEED\fP"
+.br
+.RI "BPM contido no arquivo de cada música\&. "
+.ti -1c
+.RI "int \fBSD_SUBDIVISION\fP"
+.br
+.RI "Subdivisão ritmíca de cada música\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A classe \fBSDCard\fP usada para gerenciar um objeto do tipo SD da biblioteca de SD para Arduino\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SDCard::SDCard ()"
+
+.PP
+Construtor padrão de um novo cartão SD\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "vector< string > SDCard::getList ()"
+
+.PP
+Retorna o vetor com o nome de todos os arquivos no SD\&. 
+.PP
+\fBReturns\fP
+.RS 4
+vector<string> vetor de strings com o nome de todos os arquivos armazenados no SD\&. 
+.RE
+.PP
+
+.SS "void SDCard::Makelist ()"
+
+.PP
+Preenche o vector filesNames com os nomes dos arquivos no cartão\&. 
+.SS "void SDCard::printPosition (std::string pFileName)"
+
+.PP
+Printa a posição atual dos motores\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpFileName\fP string contendo o nome do arquivo onde está armazenado as posições dos motores\&. 
+.RE
+.PP
+
+.SS "string SDCard::readFile (int pNumFile, char pNumStroke)"
+
+.PP
+Recebe como parametro a posição de uma musica no cartão e o n da batida que deverá ser retornada\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpNumFile\fP 
+.br
+\fIpNumStroke\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+string 
+.RE
+.PP
+
+.SS "void SDCard::writeInFile (vector< int > pEnginePos)"
+
+.PP
+Escreve a posição dos motores no arquivo de armazenar posição\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpEnginePos\fP 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int SDCard::SD_SPEED"
+
+.PP
+BPM contido no arquivo de cada música\&. 
+.SS "int SDCard::SD_SUBDIVISION"
+
+.PP
+Subdivisão ritmíca de cada música\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ViolaoMagico from the source code\&.

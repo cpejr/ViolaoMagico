@@ -1,6 +1,6 @@
 \hypertarget{_engines_set_8hpp_source}{}\doxysection{Engines\+Set.\+hpp}
 \label{_engines_set_8hpp_source}\index{include/EnginesSet.hpp@{include/EnginesSet.hpp}}
-\mbox{\hyperlink{_engines_set_8hpp}{Ir para a documentação deste ficheiro.}}
+\mbox{\hyperlink{_engines_set_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENGINESSET}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENGINESSET}}
@@ -43,15 +43,24 @@
 \DoxyCodeLine{00085\ }
 \DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engines_set_ac866d9ac56479ad135c4bb6882032b0d}{getEnginePos}}(\mbox{\hyperlink{class_s_d_card}{SDCard}}\ pSd);}
 \DoxyCodeLine{00092\ }
-\DoxyCodeLine{00093\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00097\ \ \ \ \ std::vector<Engine\ *>\ mEngines;}
-\DoxyCodeLine{00101\ \ \ \ \ std::vector<Engine\ *>\ mEnginesToPlay;}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ mExitLoop;}
-\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{int}\ mButtonUpState;}
-\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ mButtonSelectState;}
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ mButtonDownState;}
-\DoxyCodeLine{00117\ \};}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engines_set_a7ece387b49b60d524d11847cf5db69c0}{setEngineSpeed}}(\mbox{\hyperlink{class_s_d_card}{SDCard}}\ pSd);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ determina\ o\ número\ de\ subdivisões\ de\ um\ compasso}}
+\DoxyCodeLine{00106\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engines_set_a0824e10981475b5a9e3d1ccc50bf509d}{setSubdivision}}(\mbox{\hyperlink{class_s_d_card}{SDCard}}\ pSd);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engines_set_a2cdcf1b2da837ead70a876ace2810d4a}{setDelay}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00119\ \ \ \ \ std::vector<Engine\ *>\ mEngines;}
+\DoxyCodeLine{00123\ \ \ \ \ std::vector<Engine\ *>\ mEnginesToPlay;}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{int}\ mExitLoop;}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ mButtonUpState;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ mButtonSelectState;}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{int}\ mButtonDownState;}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{int}\ mBPMSpeed;}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ mSubdivision;}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

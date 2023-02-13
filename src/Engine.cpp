@@ -2,11 +2,11 @@
 
 Engine::Engine(char pGuitarString, int pStep, int pDir) : mGuitarString(pGuitarString)
 {
-    GLOBAL_SPEED = 90;
+    mSpeedRPM = 90;
     GLOBAL_STEPS = 200;
-    GLOBAL_TARGET = 30;
+    GLOBAL_TARGET = 15;
     this->stepperConstructor = new MyStepper(GLOBAL_STEPS, pStep, pDir);
-    this->stepperConstructor->setSpeed(GLOBAL_SPEED);
+    this->stepperConstructor->setSpeed(mSpeedRPM);
 
     this->mTarget = GLOBAL_TARGET;
 
@@ -42,8 +42,6 @@ void Engine::runToTarget()
         this->stepperConstructor->step(-1);
         this->mPosition--;
     }
-
-    // enginePos = getPosPtr();
 }
 
 int Engine::getPosition()
@@ -62,14 +60,15 @@ void Engine::oneStep(int signal_)
     this->mPosition = 0;
 }
 
-void Engine::setSpeed(int sdSpeed)
+void Engine::setSpeed(int pSdSpeed)
 {
-    this->mSpeedRPM = sdSpeed; 
+    this->mSpeedRPM = pSdSpeed;
 }
 
-void Engine::setDelaySpeed(int sdSpeed)
+void Engine::setDelaySpeed(int pSdSpeed)
 {
-    this->mDelaySpeed = sdSpeed; 
+
+    this->mDelaySpeed = pSdSpeed;
 }
 
 int Engine::getDelaySpeed()

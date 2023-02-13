@@ -1,4 +1,4 @@
-\hypertarget{class_engine}{}\doxysection{Referência à classe Engine}
+\hypertarget{class_engine}{}\doxysection{Engine Class Reference}
 \label{class_engine}\index{Engine@{Engine}}
 
 
@@ -9,7 +9,7 @@ A classe \mbox{\hyperlink{class_engine}{Engine}} corresponde a único um motor.
 
 {\ttfamily \#include $<$Engine.\+hpp$>$}
 
-\doxysubsection*{Membros públicos}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_engine_ae8be665dc68750a230bb142ffca7a0e6}{Engine}} (char p\+Guitar\+String, int p\+Step, int p\+Dir)
@@ -26,21 +26,27 @@ int \mbox{\hyperlink{class_engine_aa7d9f6c4d6822fbf63de2be5f6529b50}{get\+Positi
 \begin{DoxyCompactList}\small\item\em Getter que retorna a posição do motor. \end{DoxyCompactList}\item 
 int $\ast$ \mbox{\hyperlink{class_engine_a533c6dfa2c40c45edd87b0d3eeb5c7df}{get\+Pos\+Ptr}} ()
 \begin{DoxyCompactList}\small\item\em Getter que retorna o ponteiro referente a posição do motor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_engine_ae71a7b6a017ea179950930810ca632c2}{one\+Step}} (int signal\+\_\+)
-\begin{DoxyCompactList}\small\item\em Faz com que o motor ande um passo. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Atributos Públicos}
+void \mbox{\hyperlink{class_engine_a852fc88dfe80ff8866ad17b5799354d3}{one\+Step}} (int p\+Signal\+\_\+)
+\begin{DoxyCompactList}\small\item\em Faz com que o motor ande um passo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a5cf53883a652dd089aaad7a9b4a1ce0b}{set\+Speed}} (int p\+Sd\+Speed)
+\begin{DoxyCompactList}\small\item\em Define a velocidade do motor. A velocidade se encontra no arquivo .txt no cartão SD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_ac86ac78fe8b30228c7839cfc80ed7774}{set\+Delay\+Speed}} (int p\+Sd\+Speed)
+\begin{DoxyCompactList}\small\item\em Define o delay dos motores. O delay se encontra no arquivo .txt no cartão SD. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_engine_aa648cf0d18c12d8f0cb9372158e38621}{get\+Delay\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o delay do motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_my_stepper}{My\+Stepper}} $\ast$ \mbox{\hyperlink{class_engine_a52392ff3cdebb4e3156235add6271af4}{stepper\+Constructor}}
 \begin{DoxyCompactList}\small\item\em Ponteiro de acesso direto às funções do objeto Stepper. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Descrição detalhada}
+\doxysubsection{Detailed Description}
 A classe \mbox{\hyperlink{class_engine}{Engine}} corresponde a único um motor. 
 
 Os atributos do motor são o seu identificador (m\+Guitar\+String) , a sua posição (m\+Position) e o seu alvo (m\+Target). Em um motor de passo, é interessante salvar a posição atual do motor tendo em vista que ele próprio não consegue fazer isso quando ligado. 
 
-\doxysubsection{Documentação dos Construtores \& Destrutor}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_engine_ae8be665dc68750a230bb142ffca7a0e6}\label{class_engine_ae8be665dc68750a230bb142ffca7a0e6}} 
 \index{Engine@{Engine}!Engine@{Engine}}
 \index{Engine@{Engine}!Engine@{Engine}}
@@ -52,7 +58,7 @@ Os atributos do motor são o seu identificador (m\+Guitar\+String) , a sua posi�
 Construtor do motor. 
 
 Inicializa as variaveis privadas referentes aos pinos dos motores e a corda do violão. 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em p\+Guitar\+String} & Corda do violão \\
 \hline
 {\em p\+Step,p\+Dir} & pinos do motor \\
@@ -60,7 +66,20 @@ Inicializa as variaveis privadas referentes aos pinos dos motores e a corda do v
 \end{DoxyParams}
 
 
-\doxysubsection{Documentação das funções}
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_engine_aa648cf0d18c12d8f0cb9372158e38621}\label{class_engine_aa648cf0d18c12d8f0cb9372158e38621}} 
+\index{Engine@{Engine}!getDelaySpeed@{getDelaySpeed}}
+\index{getDelaySpeed@{getDelaySpeed}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getDelaySpeed()}{getDelaySpeed()}}
+{\footnotesize\ttfamily int Engine\+::get\+Delay\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o delay do motor. 
+
+\begin{DoxyReturn}{Returns}
+int com valor de delay do motor 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_engine_a3bc5058825bd35f706d2f46a17523c80}\label{class_engine_a3bc5058825bd35f706d2f46a17523c80}} 
 \index{Engine@{Engine}!getGuitarString@{getGuitarString}}
 \index{getGuitarString@{getGuitarString}!Engine@{Engine}}
@@ -101,18 +120,18 @@ Getter que retorna o ponteiro referente a posição do motor.
 
 Getter que retorna os passos que o motor precisa andar para tocar uma corda. 
 
-\mbox{\Hypertarget{class_engine_ae71a7b6a017ea179950930810ca632c2}\label{class_engine_ae71a7b6a017ea179950930810ca632c2}} 
+\mbox{\Hypertarget{class_engine_a852fc88dfe80ff8866ad17b5799354d3}\label{class_engine_a852fc88dfe80ff8866ad17b5799354d3}} 
 \index{Engine@{Engine}!oneStep@{oneStep}}
 \index{oneStep@{oneStep}!Engine@{Engine}}
 \doxysubsubsection{\texorpdfstring{oneStep()}{oneStep()}}
-{\footnotesize\ttfamily void Engine\+::one\+Step (\begin{DoxyParamCaption}\item[{int}]{signal\+\_\+ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Engine\+::one\+Step (\begin{DoxyParamCaption}\item[{int}]{p\+Signal\+\_\+ }\end{DoxyParamCaption})}
 
 
 
 Faz com que o motor ande um passo. 
 
 
-\begin{DoxyParams}{Parâmetros}
+\begin{DoxyParams}{Parameters}
 {\em signal\+\_\+} & to be explained \\
 \hline
 \end{DoxyParams}
@@ -136,9 +155,39 @@ Função que coloca reverte o target, para o motor fazer o movimento de subida e
 
 Função que faz o motor fazer o movimento até o alvo de passos. 
 
+\mbox{\Hypertarget{class_engine_ac86ac78fe8b30228c7839cfc80ed7774}\label{class_engine_ac86ac78fe8b30228c7839cfc80ed7774}} 
+\index{Engine@{Engine}!setDelaySpeed@{setDelaySpeed}}
+\index{setDelaySpeed@{setDelaySpeed}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{setDelaySpeed()}{setDelaySpeed()}}
+{\footnotesize\ttfamily void Engine\+::set\+Delay\+Speed (\begin{DoxyParamCaption}\item[{int}]{p\+Sd\+Speed }\end{DoxyParamCaption})}
 
 
-\doxysubsection{Documentação dos dados membro}
+
+Define o delay dos motores. O delay se encontra no arquivo .txt no cartão SD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Sd\+Speed} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_engine_a5cf53883a652dd089aaad7a9b4a1ce0b}\label{class_engine_a5cf53883a652dd089aaad7a9b4a1ce0b}} 
+\index{Engine@{Engine}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void Engine\+::set\+Speed (\begin{DoxyParamCaption}\item[{int}]{p\+Sd\+Speed }\end{DoxyParamCaption})}
+
+
+
+Define a velocidade do motor. A velocidade se encontra no arquivo .txt no cartão SD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Sd\+Speed} & int que representa a velocidade em BPM que o motor deve assumir \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_engine_a52392ff3cdebb4e3156235add6271af4}\label{class_engine_a52392ff3cdebb4e3156235add6271af4}} 
 \index{Engine@{Engine}!stepperConstructor@{stepperConstructor}}
 \index{stepperConstructor@{stepperConstructor}!Engine@{Engine}}
@@ -151,7 +200,7 @@ Ponteiro de acesso direto às funções do objeto Stepper.
 
 
 
-A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 include/\mbox{\hyperlink{_engine_8hpp}{Engine.\+hpp}}\item 
 src/\mbox{\hyperlink{_engine_8cpp}{Engine.\+cpp}}\end{DoxyCompactItemize}

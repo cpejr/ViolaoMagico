@@ -12,5 +12,8 @@ var class_engines_set =
     [ "playMany", "class_engines_set.html#ac60766898ebfb3c67a876a903c89eb36", null ],
     [ "playOneStep", "class_engines_set.html#a26092929ae56254eeaa4603e5d23e2ed", null ],
     [ "runThrough", "class_engines_set.html#ae4a1036029811698ef2ded51c7e6e751", null ],
+    [ "setDelay", "class_engines_set.html#a2cdcf1b2da837ead70a876ace2810d4a", null ],
+    [ "setEngineSpeed", "class_engines_set.html#a7ece387b49b60d524d11847cf5db69c0", null ],
+    [ "setSubdivision", "class_engines_set.html#a0824e10981475b5a9e3d1ccc50bf509d", null ],
     [ "tune", "class_engines_set.html#ac20358fa7f83677942a411a13263f816", null ]
 ];

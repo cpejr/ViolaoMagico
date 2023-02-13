@@ -1,6 +1,6 @@
 \hypertarget{_engine_8hpp_source}{}\doxysection{Engine.\+hpp}
 \label{_engine_8hpp_source}\index{include/Engine.hpp@{include/Engine.hpp}}
-\mbox{\hyperlink{_engine_8hpp}{Ir para a documentação deste ficheiro.}}
+\mbox{\hyperlink{_engine_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENGINE}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENGINE}}
@@ -26,21 +26,29 @@
 \DoxyCodeLine{00053\ }
 \DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{class_engine_a533c6dfa2c40c45edd87b0d3eeb5c7df}{getPosPtr}}();}
 \DoxyCodeLine{00058\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ae71a7b6a017ea179950930810ca632c2}{oneStep}}(\textcolor{keywordtype}{int}\ signal\_);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a852fc88dfe80ff8866ad17b5799354d3}{oneStep}}(\textcolor{keywordtype}{int}\ pSignal\_);}
 \DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{char}\ mGuitarString;}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ mTarget;}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ mPosition;}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ *mPosPtr;}
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_SPEED;}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_STEPS;}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_TARGET;}
-\DoxyCodeLine{00089\ \};}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a5cf53883a652dd089aaad7a9b4a1ce0b}{setSpeed}}(\textcolor{keywordtype}{int}\ pSdSpeed);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ac86ac78fe8b30228c7839cfc80ed7774}{setDelaySpeed}}(\textcolor{keywordtype}{int}\ pSdSpeed);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_aa648cf0d18c12d8f0cb9372158e38621}{getDelaySpeed}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{char}\ mGuitarString;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ mTarget;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ mPosition;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ *mPosPtr;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ mSpeedRPM;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{int}\ mDelaySpeed;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_SPEED;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_STEPS;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{int}\ GLOBAL\_TARGET;}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
